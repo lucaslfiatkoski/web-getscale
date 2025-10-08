@@ -1456,8 +1456,8 @@ function App() {
       <ScrollToTop />
       <Suspense fallback={<div style={{ padding: '20px', textAlign: 'center' }}>Carregando a Página...</div>}>
         <Routes>
-          <Route path="/" element={<Home />} />
-        <Route path="/conversor-id-a" element={<RFiDConverter />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/conversor-id-a" element={<RFIDConverter />} />
         <Route path="/conversor-id-onewire" element={<HexStringToBytes />} />
         <Route path="/conversor-onewire-ibutton" element={<AcessorioConverter />} />
         <Route path="/gerador-sms-suntech" element={<SMSCommandGenerator />} />
