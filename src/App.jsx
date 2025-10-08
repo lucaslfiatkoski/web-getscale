@@ -39,7 +39,7 @@ import Ligacao_601 from './ligacao_601.jsx'
 import Ligacao_302 from './ligacao_302.jsx'
 import Manual_501 from './manual_501.jsx'
 import ManualGs404 from './manual_404.jsx'
-import ManualGs601 from './manual_601'
+import ManualGs601 from './manual_601.jsx'
 
 
 
@@ -1188,39 +1188,33 @@ function Home() {
                 <CardContent className="space-y-3">
                   <div>
                     <p className="text-sm text-gray-600">
-                      • <a
-                          href="./manual-404"
-                          className="text-blue-600 hover:underline"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Manual GS-404
-                        </a>
+                      • <Link 
+                              to="/manual-404" 
+                              className="text-blue-600 hover:underline"
+                          >
+                              Manual GS-404
+                          </Link>
                     </p>
                   </div>
                   <div>
                     <p className="text-sm text-gray-600">
-                      • <a
-                          href="./manual-501 "
-                          className="text-blue-600 hover:underline"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Manual GS-501
-                        </a>
+                      • <Link 
+                              to="/manual-501" 
+                              className="text-blue-600 hover:underline"
+                          >
+                              Manual GS-501
+                          </Link>
                     </p>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-600">
-                      • <a
-                          href="./manual-601"
-                          className="text-blue-600 hover:underline"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Manual GS-601
-                        </a>
-                    </p>
+                      <p className="text-sm text-gray-600">
+                          • <Link 
+                              to="/manual-601" 
+                              className="text-blue-600 hover:underline"
+                          >
+                              Manual GS-601
+                          </Link>
+                      </p>
                   </div>
                 </CardContent>
               </Card>
