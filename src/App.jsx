@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState }  from 'react'
 import { lazy, Suspense } from 'react';
 import { Button } from '@/components/ui/button.jsx'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
@@ -23,23 +23,26 @@ import {
   MessageCircle
 } from 'lucide-react'
 import './App.css'
-import { Link, Routes, Route } from "react-router-dom";
+import { Link, Routes, Route, BrowserRouter } from "react-router-dom";
+import ScrollToTop from './ScrollToTop.jsx';
 
-import RFiDConverter from './conversor_id_a.jsx';
-import HexStringToBytes from './conversor_1wire.jsx';
-import AcessorioConverter from './onewire_ibutton.jsx';
-import SMSCommandGenerator from './sms_suntech.jsx';
-import ATCommandGenerator from './sms_queclink.jsx';
-import CardAdditionCommandGenerator from './cadatro_cartao.jsx';
-import CardRegistrationCommandGenerator from './protocolo_404.jsx';
-import Command401Details from './protocolo_302.jsx';
-import Command801Details from './protocolo_601.jsx'
-import Ligacao_404 from './ligacao_404.jsx'
-import Ligacao_601 from './ligacao_601.jsx'
-import Ligacao_302 from './ligacao_302.jsx'
-import Manual_501 from './manual_501.jsx'
-import ManualGs404 from './manual_404.jsx'
-import ManualGs601 from './manual_601.jsx'
+
+const RFIDConverter = lazy(() => import('./conversor_id_a.jsx'));
+const HexStringToBytes = lazy(() => import('./conversor_1wire.jsx'));
+const AcessorioConverter = lazy(() => import('./onewire_ibutton.jsx'));
+const SMSCommandGenerator = lazy(() => import('./sms_suntech.jsx'));
+const ATCommandGenerator = lazy(() => import('./sms_queclink.jsx'));
+const CardAdditionCommandGenerator = lazy(() => import('./cadatro_cartao.jsx'));
+const CardRegistrationCommandGenerator = lazy(() => import('./protocolo_404.jsx'));
+const Command401Details = lazy(() => import('./protocolo_302.jsx'));
+const Command801Details = lazy(() => import('./protocolo_601.jsx'));
+const Ligacao_404 = lazy(() => import('./ligacao_404.jsx'));
+const Ligacao_601 = lazy(() => import('./ligacao_601.jsx'));
+const Ligacao_302 = lazy(() => import('./ligacao_302.jsx'));
+const Manual_501 = lazy(() => import('./manual_501.jsx'));
+const ManualGs404 = lazy(() => import('./manual_404.jsx'));
+const ManualGs601 = lazy(() => import('./manual_601.jsx'));
+
 
 
 
@@ -53,7 +56,6 @@ import Gs302 from './assets//GS302.jpg'
 import Gs601 from './assets/GS601.jpg'
 import Gs501 from './assets/GS501.png'
 import Logo from './assets/logo.png'
-
 
 
 
@@ -945,14 +947,13 @@ function Home() {
                   </div>
                   <div>
                   <p className="text-sm text-gray-600">
-                    • <a 
-                        href="./ligacao_404" 
+                    • <Link 
+                        to="/ligacao_404" 
                         className="text-blue-600 hover:underline" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
+                     
                       >
                         Esquema de Ligação
-                      </a>
+                      </Link>
                   </p>
                 </div>
               </CardContent>
@@ -991,14 +992,13 @@ function Home() {
                 </div>
                 <div>
                   <p className="text-sm text-gray-600">
-                    • <a 
-                        href="./ligacao_601" 
+                    • <Link 
+                        to="/ligacao_601" 
                         className="text-blue-600 hover:underline" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
+                       
                       >
                         Esquema de Ligação
-                      </a>
+                      </Link>
                   </p>
                 </div>
               </CardContent>
@@ -1015,25 +1015,25 @@ function Home() {
               <CardContent className="space-y-3">
                 <div className="space-y-2">
                   <p className="text-sm text-gray-600">
-                    {/* MODIFICAÇÃO 3: Substituindo <a> por <Link> e usando a prop 'to' */}
-                    • <Link 
-                        to="http://wiki.getscale.com.br./pt-br/gs302suntech" 
-                        className="text-blue-600 hover:underline" 
-                      >
-                        GS-302 com Suntech
-                      </Link>
-                  </p>
-                </div>
-                <div>
-                  <p className="text-sm text-gray-600">
+                    
                     • <a 
-                        href="./ligacao_302" 
+                        href="http://wiki.getscale.com.br/pt-br/gs302suntech" 
                         className="text-blue-600 hover:underline" 
                         target="_blank" 
                         rel="noopener noreferrer"
                       >
-                        Esquema de Ligação
+                        GS-302 com Suntech
                       </a>
+                  </p>
+                </div>
+                <div>
+                  <p className="text-sm text-gray-600">
+                    • <Link 
+                        to="/ligacao_302" 
+                        className="text-blue-600 hover:underline" 
+                      >
+                        Esquema de Ligação
+                      </Link>
                   </p>
                 </div>
               </CardContent>
@@ -1049,38 +1049,34 @@ function Home() {
               <CardContent className="space-y-3">
                 <div>
                   <p className="text-sm text-gray-600">
-                    • <a 
-                        href="./conversor-id-a" 
+                     <Link
+                        to="/conversor-id-a" 
                         className="text-blue-600 hover:underline" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
+                  
                       >
                         Conversor ID A e W
-                      </a>
+                      </Link>
                   </p>
                 </div>
                 <div>
                   <p className="text-sm text-gray-600">
-                    • <a 
-                        href="./conversor-id-onewire" 
+                     <Link 
+                        to="/conversor-id-onewire" 
                         className="text-blue-600 hover:underline" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
+                        
                       >
                         Conversor ID decimal para 1-wire
-                      </a>
+                      </Link>
                   </p>
                 </div>
                 <div>
                   <p className="text-sm text-gray-600">
-                    • <a 
-                        href="./conversor-onewire-ibutton" 
+                     <Link 
+                        to="/conversor-onewire-ibutton" 
                         className="text-blue-600 hover:underline" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
                       >
                         Inversor OneWire para Ibutton.
-                      </a>
+                      </Link>
                   </p>
                 </div>
               </CardContent>
@@ -1095,38 +1091,32 @@ function Home() {
               <CardContent className="space-y-3">
                 <div>
                   <p className="text-sm text-gray-600">
-                    • <a 
-                        href="./gerador-sms-suntech" 
+                      <Link 
+                        to="/gerador-sms-suntech" 
                         className="text-blue-600 hover:underline" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
                       >
                         Gerador de SMS para rastreadores Suntech
-                      </a>
+                      </Link>
                   </p>
                 </div>
                 <div>
                   <p className="text-sm text-gray-600">
-                    • <a 
-                        href="./gerador-sms-queclink" 
-                        className="text-blue-600 hover:underline" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                      >
-                        Gerador de SMS para rastreadores Queclink
-                      </a>
+                      <Link 
+                              to="/gerador-sms-queclink" 
+                              className="text-blue-600 hover:underline"
+                          >
+                              Gerador de SMS para rastreadores Queclink
+                          </Link>
                   </p>
                 </div>
                 <div>
                   <p className="text-sm text-gray-600">
-                    • <a 
-                        href="./cadastro_cartao " 
-                        className="text-blue-600 hover:underline" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                      >
-                        Comando RS232 para Adição de Cartões
-                      </a>
+                      <Link 
+                              to="/cadastro_cartao" 
+                              className="text-blue-600 hover:underline"
+                          >
+                              Comando RS232 para Adição de Cartões
+                          </Link>
                   </p>
                 </div>
               </CardContent>
@@ -1141,38 +1131,32 @@ function Home() {
               <CardContent className="space-y-3">
                 <div>
                   <p className="text-sm text-gray-600">
-                    • <a 
-                        href="./protocolo-404 " 
-                        className="text-blue-600 hover:underline" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                      >
-                        Protocolo GS-404, GS-100 e GS-501
-                      </a>
+                    • <Link 
+                              to="/protocolo-404" 
+                              className="text-blue-600 hover:underline"
+                          >
+                              Protocolo GS-404, GS-100 e GS-501
+                          </Link>
                   </p>
                 </div>
                 <div>
                   <p className="text-sm text-gray-600">
-                    • <a 
-                        href="./protocolo-601 " 
-                        className="text-blue-600 hover:underline" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                      >
-                        Protocolo GS-601
-                      </a>
+                    • <Link 
+                              to="/protocolo-601" 
+                              className="text-blue-600 hover:underline"
+                          >
+                              Protocolo GS-601
+                          </Link>
                   </p>
                 </div>
                 <div>
                   <p className="text-sm text-gray-600">
-                    • <a 
-                        href="./protocolo-302" 
-                        className="text-blue-600 hover:underline" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                      >
-                        Protocolo GS-302
-                      </a>
+                    • <Link 
+                              to="/protocolo-302" 
+                              className="text-blue-600 hover:underline"
+                          >
+                              Protocolo GS-302
+                          </Link>
                   </p>
                 </div>
                 
@@ -1467,25 +1451,32 @@ function Home() {
 }
 
 function App() {
-  return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/conversor-id-a" element={<RFiDConverter />} />
-      <Route path="/conversor-id-onewire" element={<HexStringToBytes />} />
-      <Route path="/conversor-onewire-ibutton" element={<AcessorioConverter />} />
-      <Route path="/gerador-sms-suntech" element={<SMSCommandGenerator />} />
-      <Route path="/gerador-sms-queclink" element={<ATCommandGenerator />} />
-      <Route path="/cadastro_cartao" element={<CardAdditionCommandGenerator />} />
-      <Route path="/protocolo-404" element={<CardRegistrationCommandGenerator />} />
-      <Route path="/protocolo-302" element={<Command401Details />} />
-      <Route path="/protocolo-601" element={<Command801Details />} />
-      <Route path="/ligacao_404" element={<Ligacao_404 />} />
-      <Route path="/ligacao_601" element={<Ligacao_601 />} />
-      <Route path="/ligacao_302" element={<Ligacao_302 />} />
-      <Route path="/manual-501" element={<Manual_501 />} />
-      <Route path="/manual-404" element={<ManualGs404 />} />
-      <Route path="/manual-601" element={<ManualGs601 />} />
-    </Routes>
+  return ( 
+    <>
+      <ScrollToTop />
+      <Suspense fallback={<div style={{ padding: '20px', textAlign: 'center' }}>Carregando a Página...</div>}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        <Route path="/conversor-id-a" element={<RFiDConverter />} />
+        <Route path="/conversor-id-onewire" element={<HexStringToBytes />} />
+        <Route path="/conversor-onewire-ibutton" element={<AcessorioConverter />} />
+        <Route path="/gerador-sms-suntech" element={<SMSCommandGenerator />} />
+        <Route path="/gerador-sms-queclink" element={<ATCommandGenerator />} />
+        <Route path="/cadastro_cartao" element={<CardAdditionCommandGenerator />} />
+        <Route path="/protocolo-404" element={<CardRegistrationCommandGenerator />} />
+        <Route path="/protocolo-302" element={<Command401Details />} />
+        <Route path="/protocolo-601" element={<Command801Details />} />
+        <Route path="/ligacao_404" element={<Ligacao_404 />} />
+        <Route path="/ligacao_601" element={<Ligacao_601 />} />
+        <Route path="/ligacao_302" element={<Ligacao_302 />} />
+        <Route path="/manual-501" element={<Manual_501 />} />
+        <Route path="/manual-404" element={<ManualGs404 />} />
+        <Route path="/manual-601" element={<ManualGs601 />} />
+          
+        </Routes>
+      </Suspense>
+    </>
+   
   );
 }
 export default App;
