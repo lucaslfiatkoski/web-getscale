@@ -18,6 +18,7 @@ import {
   MessageCircle,
   MessageSquare
 } from 'lucide-react';
+import Logo from './assets/logo.png'
 
 
 
@@ -199,7 +200,7 @@ function App() {
               
               <div>
                 <img 
-                  src="./logo.png" 
+                  src={Logo}
                   alt="Getscale Logo" 
                   className="h-20 object-contain"
                 />

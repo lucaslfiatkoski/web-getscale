@@ -21,6 +21,7 @@ import {
 import El302 from './assets/GS-302_10.jpg'
 import Rele from './assets/rele.jpg'
 import El302_sensor from './assets/GS-302_12.jpg'
+import Logo from './assets/logo.png';
 
 const whatsappNumber = '5541991676700'; // Formato internacional sem caracteres especiais
 const whatsappMessage = 'Olá, Getscale! Gostaria de falar com o suporte técnico sobre produtos e ligações.';
@@ -70,7 +71,7 @@ function Ligacao_302() {
               
               <div>
                 <img 
-                  src="./logo.png" 
+                  src={Logo}
                   alt="Getscale Logo" 
                   className="h-20 object-contain"
                 />

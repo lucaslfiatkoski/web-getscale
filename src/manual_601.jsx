@@ -16,6 +16,7 @@ import Cartao from './assets/cartao601.png'
 import led1 from './assets/led1.png'
 import led2 from './assets/led2.png'
 import led3 from './assets/led3.png'
+import Logo from './assets/logo.png'
 
 
 // --- DADOS E COMPONENTES AUXILIARES DO MANUAL ---
@@ -156,7 +157,7 @@ function ManualGs601() {
               <div>
                 {/* Imagem Placeholder para logo */}
                 <img 
-                  src="./logo.png" 
+                  src={Logo} 
                   alt="Getscale Logo" 
                   className="h-20 object-contain"
                 />

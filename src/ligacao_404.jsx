@@ -22,6 +22,7 @@ import El404 from './assets/GS-404_14.jpg'
 import Rele from './assets/rele.jpg'
 import El100 from './assets/GS-100_13.jpg'
 import El501_2 from './assets/GS-501_2.JPG'
+import Logo from './assets/logo.png'
 
 const whatsappNumber = '5541991676700'; // Formato internacional sem caracteres especiais
 const whatsappMessage = 'Olá, Getscale! Gostaria de falar com o suporte técnico sobre produtos e ligações.';
@@ -71,7 +72,7 @@ function Ligacao_404() {
               
               <div>
                 <img 
-                  src="./logo.png" 
+                  src={Logo}
                   alt="Getscale Logo" 
                   className="h-20 object-contain"
                 />

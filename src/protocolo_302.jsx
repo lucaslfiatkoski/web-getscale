@@ -33,6 +33,7 @@ import {
   LogOut,
   MessageCircle  // NOVO: Ícone para 723 (Replicação RS232)
 } from 'lucide-react';
+import Logo from './assets/logo.png'
 
 
 // ----------------------------------------------------------------------
@@ -1329,7 +1330,7 @@ function App() {
               <div>
                 {/* Mantenho a imagem do logo conforme o original */}
                 <img 
-                  src="./logo.png" 
+                  src={Logo}
                   alt="Getscale Logo" 
                   className="h-20 object-contain"
                 />

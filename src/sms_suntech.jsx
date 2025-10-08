@@ -19,6 +19,7 @@ import {
   MessageSquareText,
   MessageCircle
 } from 'lucide-react';
+import Logo from './assets/logo.png'
 
 const whatsappNumber = '5541991676700'; // Formato internacional sem caracteres especiais
 const whatsappMessage = 'Olá, Getscale! Gostaria de falar com o suporte técnico sobre produtos e ligações.';
@@ -293,7 +294,7 @@ function App() {
               
               <div>
                 <img 
-                  src="./logo.png" 
+                  src={Logo}
                   alt="Getscale Logo" 
                   className="h-20 object-contain"
                 />

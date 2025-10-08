@@ -20,6 +20,7 @@ import {
 } from 'lucide-react';
 import El601 from './assets/GS-601_10.jpg'
 import Rele from './assets/rele.jpg'
+import Logo from './assets/logo.png'
 
 
 const whatsappNumber = '5541991676700'; // Formato internacional sem caracteres especiais
@@ -70,7 +71,7 @@ function Ligacao_601() {
               
               <div>
                 <img 
-                  src="./logo.png" 
+                  src={Logo}
                   alt="Getscale Logo" 
                   className="h-20 object-contain"
                 />

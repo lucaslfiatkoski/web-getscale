@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import Rele from './assets/rele.jpg'
 import Gs404 from './assets/GS404.jpg'
 import CardRegistrationCommandGenerator from './protocolo_404'
+import Logo from './assets/logo.png'
 
 // --- DADOS E COMPONENTES AUXILIARES DO MANUAL ---
 const whatsappNumber = '5541991676700'; // Formato internacional sem caracteres especiais
@@ -149,7 +150,7 @@ function ManualGs404() {
               <div>
                 {/* Imagem Placeholder para logo */}
                 <img 
-                  src="./logo.png" 
+                  src={Logo}
                   alt="Getscale Logo" 
                   className="h-20 object-contain"
                 />

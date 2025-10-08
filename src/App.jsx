@@ -52,6 +52,7 @@ import Gs301 from './assets/Gs301.jpg'
 import Gs302 from './assets//Gs302.jpg'
 import Gs601 from './assets/Gs601.jpg'
 import Gs501 from './assets/Gs501.png'
+import Logo from './assets/logo.png'
 
 
 
@@ -104,7 +105,7 @@ function Home() {
             <div className="flex items-center space-x-2">
               <div >
                 <img 
-                src="./logo.png" 
+                src={Logo}  
                 alt="Getscale Logo" 
                 className="w-80 h-40 object-contain"
                 />    

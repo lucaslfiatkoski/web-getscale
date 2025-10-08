@@ -19,6 +19,7 @@ import {
   MessageCircle
 } from 'lucide-react';
 import cartaoBImage from './assets/cartao_b.png';
+import Logo from './assets/logo.png';
 
 // --- FUNÇÕES DE LÓGICA DO CONVERSOR (iButton/Dallas Key) ---
 
@@ -546,7 +547,7 @@ function App() {
               
               <div>
                 <img 
-                  src="./logo.png" 
+                  src={Logo}
                   alt="Getscale Logo" 
                   className="h-20 object-contain"
                 />
