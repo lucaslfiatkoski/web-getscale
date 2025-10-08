@@ -1017,7 +1017,7 @@ function Home() {
                   <p className="text-sm text-gray-600">
                     {/* MODIFICAÇÃO 3: Substituindo <a> por <Link> e usando a prop 'to' */}
                     • <Link 
-                        to="/conversor-id-a" 
+                        to="http://wiki.getscale.com.br./pt-br/gs302suntech" 
                         className="text-blue-600 hover:underline" 
                       >
                         GS-302 com Suntech
