@@ -46,12 +46,12 @@ import ManualGs601 from './manual_601'
 
 // Import das imagens
 import techBg from './assets/ckyaCOQezIV6.jpg'
-import embeddedSystems from './assets/Gs404.jpg'
+import embeddedSystems from './assets/GS404.jpg'
 import Gs100 from './assets/GS100.jpg'
-import Gs301 from './assets/Gs301.jpg'
-import Gs302 from './assets//Gs302.jpg'
-import Gs601 from './assets/Gs601.jpg'
-import Gs501 from './assets/Gs501.png'
+import Gs301 from './assets/GS301.jpg'
+import Gs302 from './assets//GS302.jpg'
+import Gs601 from './assets/GS601.jpg'
+import Gs501 from './assets/GS501.png'
 import Logo from './assets/logo.png'
 
 
