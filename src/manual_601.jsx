@@ -108,37 +108,47 @@ const AlertBlock = ({ children, title, type = 'warning' }) => {
 // --- COMPONENTE PRINCIPAL (App Shell) ---
 
 function ManualGs601() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [formData, setFormData] = useState({
-    nome: '',
-    email: '',
-    telefone: '',
-    assunto: '',
-    mensagem: ''
-  });
-
- 
-
-  const handleInputChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Substituindo alert() por console.log() conforme as regras do ambiente
-    console.log('Mensagem de contato enviada:', formData); 
-    
-    // Simulação de envio
-    setFormData({
+   const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const [formData, setFormData] = useState({
       nome: '',
       email: '',
       telefone: '',
       assunto: '',
       mensagem: ''
-    });
+    })
+  
+    const handleInputChange = (e) => {
+      setFormData({
+        ...formData,
+        [e.target.name]: e.target.value
+      })
+    }
+  
+    const handleSubmit = async (e) => {
+    e.preventDefault();
+    // ... adicione seu estado de loading aqui se desejar
+    
+    // O endpoint é o caminho para o arquivo que você criou: /api/send-email
+    const endpoint = "/api/send-email";
+  
+    try {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData), 
+      });
+  
+      if (response.ok) {
+        alert('Mensagem enviada com sucesso!');
+        // Limpar o formulário
+        setFormData({ nome: '', email: '', telefone: '', assunto: '', mensagem: '' });
+      } else {
+        const errorData = await response.json();
+        alert(`Falha no envio. Tente novamente. Detalhe: ${errorData.message}`);
+      }
+    } catch (error) {
+      alert('Ocorreu um erro de conexão. Verifique sua rede.');
+    }
   };
 
   const scrollToSection = (sectionId) => {
