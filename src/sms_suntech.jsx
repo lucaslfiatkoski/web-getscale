@@ -409,13 +409,14 @@ function App() {
                             3️⃣ Clique em Gerar SMS para ver os comandos gerados..<br></br><br></br>
                             ⚠️ Atenção:<br></br>
                         </h2>
-                            <div className=" max-w-4xl mx-auto pt-2">
-                                <Badge className="flex w-auto mx-auto text-center bg-yellow-100 text-purple-800 hover:bg-purple-200 text-base font-semibold py-2 px-4 shadow-sm">
-                                Os comandos gerados não devem ser editados manualmente.<br></br>
-                                Sempre use o gerador para garantir o formato correto.<br></br>
-                                Alterações podem causar falhas de comunicação.
-                                </Badge>
-                            </div>
+                            <div className="max-w-4xl mx-auto pt-2">
+                                                {/* Removi o 'flex' e adicionei 'break-words' e 'w-full' no celular para garantir que o texto não vaze. */}
+                                                <Badge className="w-full sm:w-auto mx-auto text-center bg-yellow-100 text-purple-800 hover:bg-purple-200 text-base font-semibold py-2 px-4 shadow-sm break-words">
+                                                    Os comandos gerados não devem ser editados manualmente.<br></br>
+                                                    Sempre use o gerador para garantir o formato correto.<br></br>
+                                                    Alterações podem causar falhas de comunicação.<br></br>
+                                                </Badge>
+                                            </div>
             
           </div>
 

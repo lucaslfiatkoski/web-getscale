@@ -110,7 +110,7 @@ const ATCommandGenerator = () => {
                             value={model}
                             onChange={(e) => setModel(e.target.value)}
                             // Estilização com fonte maior
-                            className="p-3 border border-gray-300 rounded-lg text-xl bg-white shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                            className="p-3 border border-gray-300 rounded-lg text-xl bg-white shadow-sm focus:border-blue-500 focus:ring-blue-500 truncate min-w-0"
                         >
                             {models.map(m => (
                                 <option key={m} value={m}>{m.toUpperCase()}</option>
@@ -121,9 +121,9 @@ const ATCommandGenerator = () => {
                     <Button 
                         onClick={generateCommands}
                         // Fonte maior no botão
-                        className="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-200 text-lg"
+                        className="bg-green-600 w-auto hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-200 text-lg"
                     >
-                        <Repeat className="w-5 h-5 mr-2" />
+                        <Repeat className="w-auto h-auto mr-2" />
                         Gerar Comandos
                     </Button>
                 </div>
@@ -327,13 +327,14 @@ function App() {
                 Cada passo deve ser enviado em um SMS separado e aguardar o rastreador responder "OK".<br></br><br></br>
                 ⚠️ Atenção:<br></br>
             </h2>
-                <div className=" max-w-4xl mx-auto pt-2">
-                                                <Badge className="flex w-auto mx-auto text-center bg-yellow-100 text-purple-800 hover:bg-purple-200 text-base font-semibold py-2 px-4 shadow-sm">
-                                                Os comandos gerados não devem ser editados manualmente.<br></br>
-                                                Sempre use o gerador para garantir o formato correto.<br></br>
-                                                Alterações podem causar falhas de comunicação.
-                                                </Badge>
-                                            </div>
+                <div className="max-w-4xl mx-auto pt-2">
+                    {/* Removi o 'flex' e adicionei 'break-words' e 'w-full' no celular para garantir que o texto não vaze. */}
+                    <Badge className="w-full sm:w-auto mx-auto text-center bg-yellow-100 text-purple-800 hover:bg-purple-200 text-base font-semibold py-2 px-4 shadow-sm break-words">
+                        Os comandos gerados não devem ser editados manualmente.<br></br>
+                        Sempre use o gerador para garantir o formato correto.<br></br>
+                        Alterações podem causar falhas de comunicação.<br></br>
+                    </Badge>
+                </div>
           </div>
 
           {/* NOVO GERADOR DE COMANDOS AT */}
