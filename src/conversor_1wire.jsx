@@ -277,7 +277,7 @@ const DallasKeyConverter = () => {
 
     // --- ESTRUTURA JSX UNIFICADA ---
     return (
-        <div className="bg-white p-6 rounded-xl max-w-xl w-300 shadow-lg mx-auto border border-gray-100">
+        <div className="bg-white p-6 rounded-xl max-w-xl w-full shadow-lg mx-auto border border-gray-100">
             <div className="mb-6 text-center">
                 <h3 className="text-2xl font-bold text-blue-800 mb-1 flex items-center justify-center space-x-2">
                     <Key className="w-6 h-6 text-blue-600" />
@@ -435,7 +435,7 @@ const DallasKeyInverseConverter = () => {
 
     // --- ESTRUTURA JSX ---
     return (
-        <div className="bg-white p-6 rounded-xl max-w-xl w-300 shadow-lg mx-auto border border-gray-100">
+        <div className="bg-white p-6 rounded-xl max-w-xl w-full shadow-lg mx-auto border border-gray-100">
             <div className="mb-6 text-center">
                 <h3 className="text-2xl font-bold text-blue-800 mb-1 flex items-center justify-center space-x-2">
                     <Repeat className="w-6 h-6 text-blue-600" />

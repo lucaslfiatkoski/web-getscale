@@ -44,7 +44,7 @@ const whatsappMessage = 'Olá, Getscale! Gostaria de falar com o suporte técnic
 const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
 // Limite de 0xFFFFFFFF (8 dígitos hexadecimais)
-const MAX_HEX_DIGITS = 8;
+const MAX_HEX_DIGITS = 10;
 const MAX_VALUE_DESCRIPTION = '0xFFFFFFFF';
 // Limite de segundos para o comando 709 (Regra anterior)
 const MAX_SECONDS_VALUE = 45000; 
@@ -105,15 +105,18 @@ const Command701Details = () => {
                         type="text"
                         value={cardID}
                         onChange={(e) => updateCommand(e.target.value)}
-                        placeholder={`Insira um ID aqui (Máx. ${MAX_HEX_DIGITS} dígitos HEX)`}
+                        placeholder={`Insira um ID aqui (Máx. ${MAX_HEX_DIGITS} dígitos)`}
                         className="p-2 text-sm font-mono flex-grow"
                         maxLength={MAX_HEX_DIGITS} 
                     />
                     <Badge className='bg-gray-200 text-gray-700 hover:bg-gray-200 text-xs'>
                         {cardID.length} / {MAX_HEX_DIGITS}
                     </Badge>
+                </div>
+                <p className="font-semibold text-gray-800">Comando</p>
+                <div className='flex items-center space-x-2'>
                     <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
-                        {commandSyntax} {cardID.length > 0 && `// Cadastra o cartão de ID ${cardID}`}
+                        {commandSyntax} 
                     </pre>
                 </div>
             </div>
@@ -176,8 +179,7 @@ const Command702Details = () => {
                 <div className='flex items-start space-x-2 text-sm text-gray-700'>
                     <ChevronRight className='w-4 h-4 mt-1 flex-shrink-0 text-gray-600' />
                     <p>
-                        <span className='font-bold'>ID\_DO\_CARTAO:</span> O número de identificação do cartão RFID a ser removido. <span className='text-red-600 font-semibold'>(Valor Máximo: {MAX_VALUE_DESCRIPTION} ou {MAX_HEX_DIGITS} dígitos hexadecimais)</span>
-                    </p>
+                        <span className='font-bold'>ID\_DO\_CARTAO:</span> O número de identificação do cartão RFID a ser removido.</p>
                 </div>
             </div>
             <div className='space-y-2'>
@@ -187,15 +189,18 @@ const Command702Details = () => {
                         type="text"
                         value={cardID}
                         onChange={(e) => updateCommand(e.target.value)}
-                        placeholder={`Insira um ID aqui (Máx. ${MAX_HEX_DIGITS} dígitos HEX)`}
+                        placeholder={`Insira um ID aqui (Máx. ${MAX_HEX_DIGITS} dígitos)`}
                         className="p-2 text-sm font-mono flex-grow"
                         maxLength={MAX_HEX_DIGITS} 
                     />
                     <Badge className='bg-gray-200 text-gray-700 hover:bg-gray-200 text-xs'>
                         {cardID.length} / {MAX_HEX_DIGITS}
                     </Badge>
+                 </div>
+                <p className="font-semibold text-gray-800">Comando</p>
+                <div className='flex items-center space-x-2'>
                     <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
-                        {commandSyntax} {cardID.length > 0 && `// Remove o cartão de ID ${cardID}`}
+                        {commandSyntax} 
                     </pre>
                 </div>
             </div>
@@ -270,13 +275,13 @@ const Command703Details = () => {
                     </div>
                 </div>
             </div>
-            <div className='space-y-2'>
-                <p className="font-semibold text-gray-800">Exemplo</p>
+            <div className=' space-y-2'>
+                <p className="flex font-semibold text-gray-800">Exemplo</p>
                 <div className='flex items-center space-x-2'>
                     <select
                         value={mode}
                         onChange={(e) => updateCommand(e.target.value)}
-                        className="p-2 text-sm font-mono flex-grow border rounded-lg"
+                        className="flex p-2 text-sm font-mono border truncate min-w-0 rounded-lg"
                     >
                         <option value="0">0: Desativado</option>
                         <option value="1">1: Ativo (Ignição Ligada)</option>
@@ -284,6 +289,9 @@ const Command703Details = () => {
                         <option value="3">3: Saída/bloqueio sempre ativa</option>
                         <option value="4">4: Pulso de bloqueio na identificação de passageiros</option>
                     </select>
+                    </div>
+                    <p className="font-semibold text-gray-800">Comando</p>
+                    <div className='flex items-center space-x-2'>
                     <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
                         {commandSyntax} 
                         {mode === '0' }
@@ -389,11 +397,14 @@ const Command706Details = () => {
                     <select
                         value={mode}
                         onChange={(e) => updateCommand(e.target.value)}
-                        className="p-2 text-sm font-mono flex-grow border rounded-lg"
+                        className="p-2 text-sm font-mono flex-grow border rounded-lg truncate min-w-0"
                     >
                         <option value="0">0: Finalização de jornada automática</option>
                         <option value="1">1: Finalização de jornada apenas através da identificação</option>
                     </select>
+                    </div>
+<p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
                     <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
                         {commandSyntax} 
                         {mode === '0' }
@@ -498,8 +509,11 @@ const Command708Details = () => {
                     <Badge className='bg-gray-200 text-gray-700 hover:bg-gray-200 text-xs'>
                         {cardID.length} / {MAX_HEX_DIGITS}
                     </Badge>
+                   </div>
+                <p className="font-semibold text-gray-800">Comando</p>
+                <div className='flex items-center space-x-2'>
                     <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
-                        {commandSyntax} {cardID.length > 0 && `// Consulta o cartão de ID ${cardID}`}
+                        {commandSyntax} 
                     </pre>
                 </div>
             </div>
@@ -578,12 +592,11 @@ const Command709Details = () => {
                         className="p-2 text-sm font-mono flex-grow"
                         max={MAX_SECONDS_VALUE} 
                     />
+                    </div>
+                <p className="font-semibold text-gray-800">Comando</p>
+                <div className='flex items-center space-x-2'>
                     <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
                         {commandSyntax} 
-                        {parseInt(seconds, 10) === 0 
-                            ? `// Desativa o timeout`
-                            : `// Define o tempo de espera para ${commandSyntax.split('|')[1]} segundos`
-                        }
                     </pre>
                 </div>
             </div>
@@ -787,7 +800,7 @@ const Command712Details = () => {
 const Command716Details = () => {
     // Comando 716: Acionar Alerta Sonoro (Buzzer)
     const MAX_BEEPS = 10;
-    const [beeps, setBeeps] = useState('0');
+    const [beeps, setBeeps] = useState('');
     const [commandSyntax, setCommandSyntax] = useState('716|0|');
 
     const updateCommand = useCallback((val) => {
@@ -840,9 +853,11 @@ const Command716Details = () => {
                         min={1} 
                         max={MAX_BEEPS} 
                     />
+                    </div>
+                <p className="font-semibold text-gray-800">Comando</p>
+                <div className='flex items-center space-x-2'>
                     <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
                         {commandSyntax} 
-                        {`// O buzzer bipará ${commandSyntax.split('|')[1]} vezes`}
                     </pre>
                 </div>
             </div>
@@ -911,6 +926,9 @@ const Command718Details = () => {
                         <option value="1">1: Ativo (Ignição Ligada)</option>
                         <option value="2">2: Ativo (Ignição Ligada ou Desligada)</option>
                     </select>
+                    </div>
+<p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
                     <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
                         {commandSyntax} 
                         {mode === '1' }
@@ -980,6 +998,9 @@ const Command719Details = () => {
                         <option value="0">0: Desativa</option>
                         <option value="1">1: Ativa</option>
                     </select>
+                    </div>
+<p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
                     <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
                         {commandSyntax} 
                         {mode === '1'}
@@ -1048,6 +1069,9 @@ const Command721Details = () => {
                         <option value="0">0: Desativa</option>
                         <option value="1">1: Ativa</option>
                     </select>
+                    </div>
+<p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
                     <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
                         {commandSyntax} 
                         {mode === '1' }
@@ -1115,6 +1139,9 @@ const Command723Details = () => {
                         <option value="0">0: Desligado</option>
                         <option value="1">1: Ligado</option>
                     </select>
+                    </div>
+<p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
                     <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
                         {commandSyntax} 
                         {mode === '1'}
@@ -1182,6 +1209,9 @@ const Command727Details = () => {
                         <option value="1">1: 115200 bps</option>
                         <option value="2">2: 9600 bps</option>
                     </select>
+                    </div>
+<p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
                     <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
                         {commandSyntax} 
                         {mode === '0'}
@@ -1250,12 +1280,11 @@ const Command728Details = () => {
                         className="p-2 text-sm font-mono flex-grow"
                         max={MAX_SECONDS_VALUE} 
                     />
+                    </div>
+                <p className="font-semibold text-gray-800">Comando</p>
+                <div className='flex items-center space-x-2'>
                     <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
                         {commandSyntax} 
-                        {parseInt(seconds, 10) === 0 
-                            ? `// Desativa o timeout`
-                            : `// Define o tempo  de atraso para ${commandSyntax.split('|')[1]} segundos`
-                        }
                     </pre>
                 </div>
             </div>
@@ -1319,12 +1348,11 @@ const Command729Details = () => {
                         className="p-2 text-sm font-mono flex-grow"
                         max={MAX_SECONDS_VALUE} 
                     />
+                     </div>
+                <p className="font-semibold text-gray-800">Comando</p>
+                <div className='flex items-center space-x-2'>
                     <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
                         {commandSyntax} 
-                        {parseInt(seconds, 10) === 0 
-                            ? `// Desativa o timeout`
-                            : `// Define o tempo  de atraso para ${commandSyntax.split('|')[1]} segundos`
-                        }
                     </pre>
                 </div>
             </div>
@@ -1384,6 +1412,9 @@ const Command730Details = () => {
                         <option value="0">0: Pacote de logout ativo (Padrão).</option>
                         <option value="1">1: Pacote de logout desativado.</option>
                     </select>
+                    </div>
+<p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
                     <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
                         {commandSyntax} 
                         {mode === '0'}
@@ -1442,11 +1473,14 @@ const Command731Details = () => {
                     <select
                         value={mode}
                         onChange={(e) => updateCommand(e.target.value)}
-                        className="p-2 text-sm font-mono flex-grow border rounded-lg"
+                        className="p-2 text-sm font-mono flex-grow border rounded-lg truncate min-w-0"
                     >
                         <option value="0">0: Bloqueio imediato com a ignição ligada (Padrão).</option>
                         <option value="1">1: Bloqueia apenas após 15 segundos em caso de não identificação.</option>
                     </select>
+                    </div>
+<p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
                     <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
                         {commandSyntax} 
                         {mode === '0'}
@@ -1513,9 +1547,11 @@ const Command733Details = () => {
                         min={1} 
                         max={MAX_BEEPS} 
                     />
+                     </div>
+                <p className="font-semibold text-gray-800">Comando</p>
+                <div className='flex items-center space-x-2'>
                     <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
                         {commandSyntax} 
-                        {`// Envia o pacote ${commandSyntax.split('|')[1]} vezes`}
                     </pre>
                 </div>
             </div>
@@ -1578,13 +1614,16 @@ const Command734Details = () => {
                     <select
                         value={mode}
                         onChange={(e) => updateCommand(e.target.value)}
-                        className="p-2 text-sm font-mono flex-grow border rounded-lg"
+                        className="p-2 text-sm font-mono flex-grow border rounded-lg truncate min-w-0"
                     >
                         <option value="0">0: Dupla Frequência, 125Khz e 13.56Mhz (Padrão).</option>
                         <option value="1">1: Apenas 125Khz</option>
                         <option value="2">2: Apenas 13.56Mhz Mifare.</option>
                         <option value="3">3: Apenas 13.56Mhz NFC.</option>
                     </select>
+                    </div>
+<p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
                     <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
                         {commandSyntax} 
                         {mode === '0'}
@@ -1650,12 +1689,15 @@ const Command736Details = () => {
                     <select
                         value={mode}
                         onChange={(e) => updateCommand(e.target.value)}
-                        className="p-2 text-sm font-mono flex-grow border rounded-lg"
+                        className="p-2 text-sm font-mono flex-grow border rounded-lg truncate min-w-0"
                     >
                         <option value="0">0: Buzzer ativo em todas as funções (Padrão).</option>
                         <option value="1">1: Buzzer ativo apenas para alertas (não bipa solicitando identificação).</option>
                         <option value="2">2: Buzzer completamente desligado.</option>
                     </select>
+                    </div>
+<p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
                     <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
                         {commandSyntax} 
                         {mode === '0'}
@@ -1719,6 +1761,9 @@ const Command738Details = () => {
                         <option value="0">0: Alerta desativado.</option>
                         <option value="1">1: Alerta ativo.</option>
                     </select>
+                    </div>
+<p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
                     <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
                         {commandSyntax} 
                         {mode === '0'}

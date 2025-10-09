@@ -127,7 +127,7 @@ const RFiDConverter = () => {
 
   // --- ESTRUTURA JSX ---
   return (
-    <div className="bg-white p-6 rounded-x1 w-160 shadow-lg mx-auto border border-gray-100">
+    <div className="bg-white p-6 rounded-xl max-w-xl w-full shadow-lg mx-auto border border-gray-100">
         <div className="mb-4">
             <h3 className="text-2xl font-bold text-blue-800 mb-1 flex items-center space-x-2">
                  <Cpu className="w-6 h-6 text-blue-600" />
@@ -287,7 +287,7 @@ const SpecificIDConverter = () => {
     };
 
     return (
-        <Card className="bg-white p-6 rounded-x1 w-160 shadow-lg mx-auto border border-gray-100">
+        <Card className="bg-white p-6 rounded-xl max-w-xl w-full shadow-lg mx-auto border border-gray-100">
           <div className="mb-4">
             <h3 className="text-2xl font-bold text-blue-800 mb-1 flex items-center space-x-2">
                  <Cpu className="w-6 h-6 text-blue-600" />

@@ -27,6 +27,8 @@ import { Link, Routes, Route, BrowserRouter } from "react-router-dom";
 import ScrollToTop from './ScrollToTop.jsx';
 
 
+
+
 const RFIDConverter = lazy(() => import('./conversor_id_a.jsx'));
 const HexStringToBytes = lazy(() => import('./conversor_1wire.jsx'));
 const AcessorioConverter = lazy(() => import('./onewire_ibutton.jsx'));
@@ -78,17 +80,33 @@ function Home() {
     })
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    alert('Obrigado! Sua mensagem foi recebida.')
-    setFormData({
-      nome: '',
-      email: '',
-      telefone: '',
-      assunto: '',
-      mensagem: ''
-    })
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  // ... adicione seu estado de loading aqui se desejar
+  
+  // O endpoint é o caminho para o arquivo que você criou: /api/send-email
+  const endpoint = "/api/send-email";
+
+  try {
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData), 
+    });
+
+    if (response.ok) {
+      alert('Mensagem enviada com sucesso!');
+      // Limpar o formulário
+      setFormData({ nome: '', email: '', telefone: '', assunto: '', mensagem: '' });
+    } else {
+      const errorData = await response.json();
+      alert(`Falha no envio. Tente novamente. Detalhe: ${errorData.message}`);
+    }
+  } catch (error) {
+    alert('Ocorreu um erro de conexão. Verifique sua rede.');
   }
+};
+
 
   const scrollToSection = (sectionId) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' })
@@ -210,17 +228,22 @@ function Home() {
 
               <div className="grid grid-cols-3 gap-6 pt-8">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-600">10cm</div>
+                  <div className="text-3xl font-bold text-blue-600">Até 10cm</div>
                   <div className="text-sm text-gray-600">Alcance de Leitura</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-600">150</div>
+                  <div className="text-3xl font-bold text-blue-600">Até 1.500</div>
                   <div className="text-sm text-gray-600">Cadastros</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-blue-600">1 ano</div>
                   <div className="text-sm text-gray-600">Garantia</div>
                 </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-blue-600">Dupla Frêquencia</div>
+                  <div className="text-sm text-gray-600">125KHz e 13.56MHz</div>
+                </div>
+                
               </div>
             </div>
 
@@ -819,18 +842,111 @@ function Home() {
       {/* Suporte Section */}
       <section id="suporte" className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <Badge className="bg-purple-100 text-purple-800 hover:bg-purple-200 mb-4">
               Suporte Técnico
             </Badge>
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl font-bold text-gray-900 mb-10">
               Manuais e Documentação
             </h2>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="justify-center w-full hover:shadow-xl transition-shadow border-0 shadow-lg ">
+                <CardHeader>
+                  <CardTitle className="flex items-center space-x-2">
+                    <Download className="w-5 h-5 text-purple-600" />
+                    <span>Manuais</span>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <div>
+                    <p className="text-sm text-gray-600">
+                      • <Link 
+                              to="/manual-404" 
+                              className="text-blue-600 hover:underline"
+                          >
+                              Manual GS-404
+                          </Link>
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-600">
+                      • <Link 
+                              to="/manual-501" 
+                              className="text-blue-600 hover:underline"
+                          >
+                              Manual GS-501
+                          </Link>
+                    </p>
+                  </div>
+                  <div>
+                      <p className="text-sm text-gray-600">
+                          • <Link 
+                              to="/manual-601" 
+                              className="text-blue-600 hover:underline"
+                          >
+                              Manual GS-601
+                          </Link>
+                      </p>
+                  </div>
+                </CardContent>
+              </Card>
+            <Card className="hover:shadow-xl transition-shadow border-0 shadow-lg ">
+              <CardHeader>
+                <CardTitle className="flex items-center space-x-2">
+                  <Download className="w-5 h-5 text-purple-600" />
+                  <span>Protocolos</span>
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <div>
+                  <p className="text-sm text-gray-600">
+                    • <Link 
+                              to="/protocolo-404" 
+                              className="text-blue-600 hover:underline"
+                          >
+                              Protocolo GS-404, GS-100 e GS-501
+                          </Link>
+                  </p>
+                </div>
+                <div>
+                  <p className="text-sm text-gray-600">
+                    • <Link 
+                              to="/protocolo-601" 
+                              className="text-blue-600 hover:underline"
+                          >
+                              Protocolo GS-601
+                          </Link>
+                  </p>
+                </div>
+                <div>
+                  <p className="text-sm text-gray-600">
+                    • <Link 
+                              to="/protocolo-302" 
+                              className="text-blue-600 hover:underline"
+                          >
+                              Protocolo GS-302
+                          </Link>
+                  </p>
+                </div>
+                
+              </CardContent>
+            </Card>
+            
+
+          </div>
+          <br></br>  <br></br>  <br></br>
+          
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+              Esquema de ligação e configuração com rastreadores
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 ">
             {/* GS-404 Manuais */}
-            <Card className="hover:shadow-xl transition-shadow border-0 shadow-lg">
+            <Card className="hover:shadow-xl transition-shadow border-0 shadow-lg ">
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
                   <Download className="w-5 h-5 text-blue-600" />
@@ -1038,6 +1154,17 @@ function Home() {
                 </div>
               </CardContent>
             </Card>
+          </div>
+
+          <br></br>  <br></br>  <br></br>
+          
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+              Geradores de comandos e Conversores de cartões
+            </h2>
+          </div>
+
+          <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
 
             <Card className="hover:shadow-xl transition-shadow border-0 shadow-lg">
               <CardHeader>
@@ -1121,88 +1248,6 @@ function Home() {
                 </div>
               </CardContent>
             </Card>
-            <Card className="hover:shadow-xl transition-shadow border-0 shadow-lg">
-              <CardHeader>
-                <CardTitle className="flex items-center space-x-2">
-                  <Download className="w-5 h-5 text-purple-600" />
-                  <span>Protocolos</span>
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                <div>
-                  <p className="text-sm text-gray-600">
-                    • <Link 
-                              to="/protocolo-404" 
-                              className="text-blue-600 hover:underline"
-                          >
-                              Protocolo GS-404, GS-100 e GS-501
-                          </Link>
-                  </p>
-                </div>
-                <div>
-                  <p className="text-sm text-gray-600">
-                    • <Link 
-                              to="/protocolo-601" 
-                              className="text-blue-600 hover:underline"
-                          >
-                              Protocolo GS-601
-                          </Link>
-                  </p>
-                </div>
-                <div>
-                  <p className="text-sm text-gray-600">
-                    • <Link 
-                              to="/protocolo-302" 
-                              className="text-blue-600 hover:underline"
-                          >
-                              Protocolo GS-302
-                          </Link>
-                  </p>
-                </div>
-                
-              </CardContent>
-            </Card>
-            <Card className="justify-center w-full hover:shadow-xl transition-shadow border-0 shadow-lg">
-                <CardHeader>
-                  <CardTitle className="flex items-center space-x-2">
-                    <Download className="w-5 h-5 text-purple-600" />
-                    <span>Manuais</span>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-3">
-                  <div>
-                    <p className="text-sm text-gray-600">
-                      • <Link 
-                              to="/manual-404" 
-                              className="text-blue-600 hover:underline"
-                          >
-                              Manual GS-404
-                          </Link>
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-600">
-                      • <Link 
-                              to="/manual-501" 
-                              className="text-blue-600 hover:underline"
-                          >
-                              Manual GS-501
-                          </Link>
-                    </p>
-                  </div>
-                  <div>
-                      <p className="text-sm text-gray-600">
-                          • <Link 
-                              to="/manual-601" 
-                              className="text-blue-600 hover:underline"
-                          >
-                              Manual GS-601
-                          </Link>
-                      </p>
-                  </div>
-                </CardContent>
-              </Card>
-            
           </div>
 
 
@@ -1429,7 +1474,7 @@ function Home() {
               <span className="text-xl font-bold">Getscale</span>
             </div>
             <p className="text-gray-400 mb-4">
-              Sistemas Embarcados - Soluções RFID Personalizadas
+              Sistemas Embarcados - Soluções Personalizadas
             </p>
             <p className="text-sm text-gray-500">
               © Copyright 2025 Getscale - Sistemas Embarcados - Todos os direitos reservados

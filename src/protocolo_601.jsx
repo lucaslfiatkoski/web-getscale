@@ -113,6 +113,9 @@ const Command801Details = () => {
                     <Badge className='bg-gray-200 text-gray-700 hover:bg-gray-200 text-xs'>
                         {cardID.length} / {MAX_HEX_DIGITS}
                     </Badge>
+                    </div>
+ <p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
                     <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
                         {commandSyntax} {cardID.length > 0 && `// Cadastra o cartão de ID ${cardID}`}
                     </pre>
@@ -134,12 +137,8 @@ const Command801Details = () => {
     );
 };
 
-// ----------------------------------------------------------------------
-// COMPONENTE 2: DETALHE DO COMANDO RS232 702 (REMOÇÃO DE CARTÃO)
-// ----------------------------------------------------------------------
-
 const Command802Details = () => {
-    
+    // Comando 802: Remoção de Motorista (Remover) - Baseado no padrão dos outros comandos
     const [cardID, setCardID] = useState('');
     const [commandSyntax, setCommandSyntax] = useState('802|{ID_DO_CARTAO}|');
 
@@ -177,8 +176,7 @@ const Command802Details = () => {
                 <div className='flex items-start space-x-2 text-sm text-gray-700'>
                     <ChevronRight className='w-4 h-4 mt-1 flex-shrink-0 text-gray-600' />
                     <p>
-                        <span className='font-bold'>ID\_DO\_CARTAO:</span> O número de identificação do cartão RFID a ser removido. <span className='text-red-600 font-semibold'>(Valor Máximo: {MAX_VALUE_DESCRIPTION} ou {MAX_HEX_DIGITS} dígitos hexadecimais)</span>
-                    </p>
+                        <span className='font-bold'>ID\_DO\_CARTAO:</span> O número de identificação do cartão RFID a ser removido.</p>
                 </div>
             </div>
             <div className='space-y-2'>
@@ -188,15 +186,18 @@ const Command802Details = () => {
                         type="text"
                         value={cardID}
                         onChange={(e) => updateCommand(e.target.value)}
-                        placeholder={`Insira um ID aqui (Máx. ${MAX_HEX_DIGITS} dígitos HEX)`}
+                        placeholder={`Insira um ID aqui (Máx. ${MAX_HEX_DIGITS} dígitos)`}
                         className="p-2 text-sm font-mono flex-grow"
                         maxLength={MAX_HEX_DIGITS} 
                     />
                     <Badge className='bg-gray-200 text-gray-700 hover:bg-gray-200 text-xs'>
                         {cardID.length} / {MAX_HEX_DIGITS}
                     </Badge>
+                 </div>
+                <p className="font-semibold text-gray-800">Comando</p>
+                <div className='flex items-center space-x-2'>
                     <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
-                        {commandSyntax} {cardID.length > 0 && `// Remove o cartão de ID ${cardID}`}
+                        {commandSyntax} 
                     </pre>
                 </div>
             </div>
@@ -215,9 +216,7 @@ const Command802Details = () => {
     );
 };
 
-// ----------------------------------------------------------------------
-// COMPONENTE 3: DETALHE DO COMANDO RS232 703 (CONFIGURAR BLOQUEIO)
-// ----------------------------------------------------------------------
+
 
 const Command803Details = () => {
     // Comando 703: Configurar Saída de Bloqueio
@@ -274,13 +273,18 @@ const Command803Details = () => {
                     <select
                         value={mode}
                         onChange={(e) => updateCommand(e.target.value)}
-                        className="p-2 text-sm font-mono flex-grow border rounded-lg"
+                        className="p-2 text-sm font-mono flex-grow border rounded-lg truncate min-w-0
+"
                     >
                         <option value="0">0: Saída/bloqueio desligada</option>
                         <option value="1">1: Antifurto ativo (liberado pela lista de cartões)</option>
                         <option value="2">2: Antifurto parcial (qualquer cartão libera)</option>
                         <option value="3">3: Saída/bloqueio sempre ativa</option>
                     </select>
+                    </div>
+ <p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
+
                     <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
                         {commandSyntax} 
                         {mode === '0'}
@@ -299,6 +303,16 @@ const Command803Details = () => {
 // ----------------------------------------------------------------------
 
 const Command804Details = () => {
+    const [mode, setMode] = useState('0');
+    const [commandSyntax, setCommandSyntax] = useState('804|0|');
+
+    const updateCommand = useCallback((val) => {
+        const cleanVal = val.replace(/[^0-3]/g, '');
+        let finalVal = cleanVal.length === 0 ? '0' : cleanVal.slice(0, 1);
+        
+        setCommandSyntax(`804|${finalVal}|`);
+        setMode(finalVal);
+    }, []);
     // Comando 704: Consultar Quantidade de Cartões
     return (
         <div className='p-4 border border-blue-200 rounded-lg bg-blue-50 space-y-4'>
@@ -328,13 +342,16 @@ const Command804Details = () => {
                     <select
                         value={mode}
                         onChange={(e) => updateCommand(e.target.value)}
-                        className="p-2 text-sm font-mono flex-grow border rounded-lg"
+                        className="p-2 text-sm font-mono flex-grow border rounded-lg truncate min-w-0"
                     >
                         <option value="0">0: Saída/bloqueio desligada</option>
                         <option value="1">1: Antifurto ativo (liberado pela lista de cartões)</option>
                         <option value="2">2: Antifurto parcial (qualquer cartão libera)</option>
                         <option value="3">3: Saída/bloqueio sempre ativa</option>
                     </select>
+                    </div>
+ <p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
                     <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
                         {commandSyntax} 
                         {mode === '0'}
@@ -398,11 +415,16 @@ const Command806Details = () => {
                     <select
                         value={mode}
                         onChange={(e) => updateCommand(e.target.value)}
-                        className="p-2 text-sm font-mono flex-grow border rounded-lg"
+                        className="p-2 text-sm font-mono flex-grow border rounded-lg truncate min-w-0"
                     >
                         <option value="0">0: Finalização de jornada automática</option>
                         <option value="1">1: inalização de jornada apenas através da identificação </option>
                     </select>
+                    </div>
+ <p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
+
+
                     <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
                         {commandSyntax} 
                         {mode === '0'}
@@ -507,10 +529,13 @@ const Command808Details = () => {
                     <Badge className='bg-gray-200 text-gray-700 hover:bg-gray-200 text-xs'>
                         {cardID.length} / {MAX_HEX_DIGITS}
                     </Badge>
-                    <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
-                        {commandSyntax} {cardID.length > 0 && `// Consulta o cartão de ID ${cardID}`}
-                    </pre>
-                </div>
+                    </div>
+  <p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
+ <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
+   {commandSyntax} 
+ </pre>
+</div>
             </div>
             <div className='space-y-2 pt-4 border-t border-teal-200'>
                 <p className="font-semibold text-gray-800">Retorno do Módulo</p>
@@ -587,14 +612,13 @@ const Command809Details = () => {
                         className="p-2 text-sm font-mono flex-grow"
                         max={MAX_SECONDS_601} 
                     />
-                    <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
-                        {commandSyntax} 
-                        {parseInt(seconds, 10) === 0 
-                            ? `// Desativa o timeout`
-                            : `// Define o tempo de espera para ${commandSyntax.split('|')[1]} segundos`
-                        }
-                    </pre>
-                </div>
+                    </div>
+  <p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
+ <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
+   {commandSyntax} 
+ </pre>
+</div>
             </div>
         </div>
     );
@@ -646,11 +670,14 @@ const Command810Details = () => {
                     <select
                         value={mode}
                         onChange={(e) => updateCommand(e.target.value)}
-                        className="p-2 text-sm font-mono flex-grow border rounded-lg"
+                        className="p-2 text-sm font-mono flex-grow border rounded-lg truncate min-w-0"
                     >
                         <option value="0">0:Botões de jornada sem identificação.</option>
                         <option value="1">1: Botões de jornada com identificação.</option>
                     </select>
+                    </div>
+ <p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
                     <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
                         {commandSyntax} 
                         {mode === '1' }
@@ -708,11 +735,16 @@ const Command811Details = () => {
                     <select
                         value={mode}
                         onChange={(e) => updateCommand(e.target.value)}
-                        className="p-2 text-sm font-mono flex-grow border rounded-lg"
+                        className="p-2 text-sm font-mono flex-grow border rounded-lg truncate min-w-0"
                     >
                         <option value="0">0: Antifurto via botões de jornada desligado.</option>
                         <option value="1">1: Antifurto via botões de jornada ligado.</option>
                     </select>
+                    
+</div>
+ <p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
+
                     <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
                         {commandSyntax} 
                         {mode === '1' }
@@ -780,11 +812,13 @@ const Command812Details = () => {
                         min={1} 
                         max={MAX_BEEPS} 
                     />
-                    <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
-                        {commandSyntax} 
-                        {`// O buzzer bipará ${commandSyntax.split('|')[1]} vezes`}
-                    </pre>
-                </div>
+                    </div>
+  <p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
+ <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
+   {commandSyntax} 
+ </pre>
+</div>
             </div>
         </div>
     );
@@ -863,11 +897,15 @@ const Command814Details = () => {
                     <select
                         value={mode}
                         onChange={(e) => updateCommand(e.target.value)}
-                        className="p-2 text-sm font-mono flex-grow border rounded-lg"
+                        className="p-2 text-sm font-mono flex-grow border rounded-lg truncate min-w-0"
                     >
                         <option value="0">0: Identificação via ignição e antifurto desligados.</option>
                         <option value="1">1: Identificação via ignição e antifurto ligados.</option>
                     </select>
+                    </div>
+ <p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
+
                     <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
                         {commandSyntax} 
                         {mode === '1' }
@@ -928,12 +966,16 @@ const Command815Details = () => {
                     <select
                         value={mode}
                         onChange={(e) => updateCommand(e.target.value)}
-                        className="p-2 text-sm font-mono flex-grow border rounded-lg"
+                        className="p-2 text-sm font-mono flex-grow border rounded-lg truncate min-w-0"
                     >
                         <option value="0">0: Desabilitado.</option>
                         <option value="1">1: Login/logout do ajudante/segundo motorista via botão cadeado.</option>
                         <option value="2">2: Identificação de passageiros via botão cadeado.</option>
                     </select>
+                    </div>
+ <p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
+
                     <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
                         {commandSyntax} 
                         {mode === '2' }
@@ -1001,6 +1043,7 @@ const Command817Details = () => {
                     </div>
                 </div>
             </div>
+            
             <div className='space-y-2'>
                 <p className="font-semibold text-gray-800">Exemplo</p>
                 <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap"> 
@@ -1076,7 +1119,7 @@ const Command818Details = () => {
                     <select
                         value={mode}
                         onChange={(e) => updateCommand(e.target.value)}
-                        className="p-2 text-sm font-mono flex-grow border rounded-lg"
+                        className="p-2 text-sm font-mono flex-grow border rounded-lg truncate min-w-0"
                     >
                         <option value="0">0: Botões de jornada com uso livre.</option>
                         <option value="1">1: Botões de jornada liberados apenas na alteração da ignicao.</option>
@@ -1086,6 +1129,10 @@ const Command818Details = () => {
                         <option value="5">5: Modo sem restrições.</option>
                         <option value="6">6: Uso livre com alerta de Jornada desligada.</option>
                     </select>
+                    </div>
+ <p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
+
                     <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
                         {commandSyntax}
                         {mode === '6' }
@@ -1147,11 +1194,15 @@ const Command819Details = () => {
                     <select
                         value={mode}
                         onChange={(e) => updateCommand(e.target.value)}
-                        className="p-2 text-sm font-mono flex-grow border rounded-lg"
+                        className="p-2 text-sm font-mono flex-grow border rounded-lg truncate min-w-0"
                     >
                         <option value="1">1: saída ativa / trava bau liberada.</option>
                         <option value="2">2: saída desligada / trava báu trancada .</option>
                     </select>
+                    </div>
+ <p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
+
                     <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
                         {commandSyntax} 
                         {mode === '2' }
@@ -1220,7 +1271,7 @@ const Command821Details = () => {
                     <select
                         value={mode}
                         onChange={(e) => updateCommand(e.target.value)}
-                        className="p-2 text-sm font-mono flex-grow border rounded-lg"
+                        className="p-2 text-sm font-mono flex-grow border rounded-lg truncate min-w-0"
                     >
                         <option value="0">0: Botões desligados.</option>
                         <option value="1">1: Um digito.</option>
@@ -1228,6 +1279,10 @@ const Command821Details = () => {
                         <option value="3">3: Tres digitos.</option>
                         <option value="4">4: Quatro digitos - padrão .</option>
                     </select>
+                    </div>
+ <p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
+
                     <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
                         {commandSyntax}
                         {mode === '4' } 
@@ -1298,14 +1353,13 @@ const Command822Details = () => {
                         className="p-2 text-sm font-mono flex-grow"
                         max={MAX_SECONDS_601} 
                     />
-                    <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
-                        {commandSyntax} 
-                        {parseInt(seconds, 10) === 0 
-                            ? `// Define o tempo de delay para ${commandSyntax.split('|')[1]} segundos`
-                            : `// Define o tempo de delay para ${commandSyntax.split('|')[1]} segundos`
-                        }
-                    </pre>
-                </div>
+                    </div>
+  <p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
+ <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
+   {commandSyntax} 
+ </pre>
+</div>
             </div>
         </div>
     );
@@ -1356,11 +1410,14 @@ const Command823Details = () => {
                     <select
                         value={mode}
                         onChange={(e) => updateCommand(e.target.value)}
-                        className="p-2 text-sm font-mono flex-grow border rounded-lg"
+                        className="p-2 text-sm font-mono flex-grow border rounded-lg truncate min-w-0"
                     >
                         <option value="0">0: Alerta ativo – padrão quando o controle de trava báu estiver ativo .</option>
                         <option value="1">1: saída desligada / trava báu trancada .</option>
                     </select>
+                    </div>
+ <p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
                     <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
                         {commandSyntax} 
                         {mode === '1' }
@@ -1417,11 +1474,15 @@ const Command824Details = () => {
                     <select
                         value={mode}
                         onChange={(e) => updateCommand(e.target.value)}
-                        className="p-2 text-sm font-mono flex-grow border rounded-lg"
+                        className="p-2 text-sm font-mono flex-grow border rounded-lg truncate min-w-0"
                     >
                         <option value="0">0: Envio não ativo – padrão .</option>
                         <option value="1">1: Envio ativo.</option>
                     </select>
+                    </div>
+ <p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
+
                     <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
                         {commandSyntax} 
                         {mode === '1' }
@@ -1489,14 +1550,14 @@ const Command825Details = () => {
                         className="p-2 text-sm font-mono flex-grow"
                         max={IG_SECONDS_601} 
                     />
-                    <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
-                        {commandSyntax} 
-                        {parseInt(seconds, 10) === 0 
-                            ? `// Define o tempo de atraso para ${commandSyntax.split('|')[1]} segundos`
-                            : `// Define o tempo de atraso para ${commandSyntax.split('|')[1]} segundos`
-                        }
-                    </pre>
-                </div>
+                    </div>
+  <p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
+ <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
+   {commandSyntax} 
+ </pre>
+</div>
+
             </div>
         </div>
     );
@@ -1558,14 +1619,14 @@ const Command826Details = () => {
                         className="p-2 text-sm font-mono flex-grow"
                         max={IG_SECONDS_601} 
                     />
-                    <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
-                        {commandSyntax} 
-                        {parseInt(seconds, 10) === 0 
-                            ? `// Define o tempo  de atraso para ${commandSyntax.split('|')[1]} segundos`
-                            : `// Define o tempo  de atraso para ${commandSyntax.split('|')[1]} segundos`
-                        }
-                    </pre>
-                </div>
+                    </div>
+  <p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
+ <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
+   {commandSyntax} 
+ </pre>
+</div>
+
             </div>
         </div>
     );
@@ -1621,6 +1682,9 @@ const Command827Details = () => {
                         <option value="0">0: Função desativada .</option>
                         <option value="1">1: Função ativada .</option>
                     </select>
+                    </div>
+ <p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
                     <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
                         {commandSyntax} 
                         {mode === '1' }
@@ -1682,6 +1746,9 @@ const Command828Details = () => {
                         <option value="0">0: Função desativada .</option>
                         <option value="1">1: Função ativada .</option>
                     </select>
+                    </div>
+ <p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
                     <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
                         {commandSyntax} 
                         {mode === '1' }
@@ -1749,14 +1816,13 @@ const Command829Details = () => {
                         className="p-2 text-sm font-mono flex-grow"
                         max={IG_SECONDS_601} 
                     />
-                    <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
-                        {commandSyntax} 
-                        {parseInt(seconds, 10) === 0 
-                            ? `// Define o tempo  tempo limite para ${commandSyntax.split('|')[1]} segundos`
-                            : `// Define o tempo  tempo limite para ${commandSyntax.split('|')[1]} segundos`
-                        }
-                    </pre>
-                </div>
+                    </div>
+  <p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
+ <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
+   {commandSyntax} 
+ </pre>
+</div>
             </div>
         </div>
     );
@@ -1812,6 +1878,9 @@ const Command830Details = () => {
                         <option value="0">0: Função desativada .</option>
                         <option value="1">1: Função ativada .</option>
                     </select>
+                    </div>
+ <p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
                     <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
                         {commandSyntax} 
                         {mode === '1' }
@@ -1873,6 +1942,9 @@ const Command832Details = () => {
                         <option value="0">0: Função desativada .</option>
                         <option value="1">1: Função ativada .</option>
                     </select>
+                    </div>
+ <p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
                     <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
                         {commandSyntax} 
                         {mode === '1' }
@@ -1934,6 +2006,9 @@ const Command833Details = () => {
                         <option value="0">0: Função desativada .</option>
                         <option value="1">1: Função ativada .</option>
                     </select>
+                    </div>
+ <p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
                     <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
                         {commandSyntax} 
                         {mode === '1' }
@@ -1996,12 +2071,15 @@ const Command835Details = () => {
                     <select
                         value={mode}
                         onChange={(e) => updateCommand(e.target.value)}
-                        className="p-2 text-sm font-mono flex-grow border rounded-lg"
+                        className="p-2 text-sm font-mono flex-grow border truncate min-w-0 rounded-lg"
                     >
                         <option value="0">0: Dupla Frequência, 125Khz e 13.56Mhz (Padrão).</option>
                         <option value="1">1: Apenas 125Khz</option>
                         <option value="2">2: Apenas 13.56Mhz Mifare.</option>
                     </select>
+                    </div>
+ <p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
                     <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
                         {commandSyntax} 
                         {mode === '0'}
@@ -2070,6 +2148,10 @@ const Command837Details = () => {
                         <option value="1">1: 115200 bps</option>
                         <option value="2">2: 9600 bps</option>
                     </select>
+                    </div>
+ <p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
+
                     <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
                         {commandSyntax} 
                         {mode === '0'}
@@ -2097,6 +2179,7 @@ function App() {
   // Lista de comandos disponíveis para seleção (ATUALIZADA E VERIFICADA)
   const COMMAND_OPTIONS = [
     { id: '801', name: 'Comando 801 - Cadastro de Motorista (1 ID)', Component: Command801Details },
+    { id: '802', name: 'Comando 802 - Remoção de Motorista', Component: Command802Details },
     { id: '803', name: 'Comando 803 - Configurar Saída de Bloqueio', Component: Command803Details },
     { id: '804', name: 'Comando 804 - Consultar Quantidade de Cartões', Component: Command804Details },
     { id: '806', name: 'Comando 806 - Ação ao Desligar o Veículo', Component: Command806Details },
@@ -2107,6 +2190,8 @@ function App() {
     { id: '811', name: 'Comando 811 - Antifurto por RFID com os botões de jornada', Component: Command811Details },
     { id: '812', name: 'Comando 812 - Alerta Sonoro', Component: Command812Details },
     { id: '813', name: 'Comando 813 - Reset de Fábrica', Component: Command813Details },
+    { id: '814', name: 'Comando 814 - Identificação via ignição e antifurto', Component: Command814Details },
+    { id: '815', name: 'Comando 815 - Função botão cadeado', Component: Command815Details },
     { id: '817', name: 'Comando 817 - Alterar Protocolo de Comunicação', Component: Command817Details }, 
     { id: '818', name: 'Comando 818 - Modo de funcionamento', Component: Command818Details }, 
     { id: '819', name: 'Comando 819 - Controle Saída 02/Trava Baú', Component: Command819Details }, 

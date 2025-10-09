@@ -124,14 +124,13 @@ const Command401Details = () => {
                         className="p-2 text-sm font-mono flex-grow"
                         max={MAX_SECONDS_VALUE} 
                     />
-                    <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
-                        {commandSyntax} 
-                        {parseInt(seconds, 10) === 0
-                            ? `// Define o tempo de envio para ${commandSyntax.split('|')[1]} segundos`
-                            : `// Define o tempo de envio para ${commandSyntax.split('|')[1]} segundos`
-                        }
-                    </pre>
-                </div>
+                    </div>
+  <p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
+ <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
+   {commandSyntax} 
+ </pre>
+</div>
             </div>
         </div>
     );
@@ -201,14 +200,13 @@ const Command402Details = () => {
                         className="p-2 text-sm font-mono flex-grow"
                         max={MAX_SECONDS_VALUE} 
                     />
-                    <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
-                        {commandSyntax} 
-                        {parseInt(seconds, 10) === 0
-                            ? `// Define o tempo de envio para ${commandSyntax.split('|')[1]} segundos`
-                            : `// Define o tempo de envio para ${commandSyntax.split('|')[1]} segundos`
-                        }
-                    </pre>
-                </div>
+                    </div>
+  <p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
+ <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
+   {commandSyntax} 
+ </pre>
+</div>
             </div>
         </div>
     );
@@ -277,14 +275,13 @@ const Command403Details = () => {
                         className="p-2 text-sm font-mono flex-grow"
                         max={MAX_SECONDS_VALUE} 
                     />
-                    <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
-                        {commandSyntax} 
-                        {parseInt(seconds, 10) === 0 
-                            ? `// Define o tempo de envio para ${commandSyntax.split('|')[1]} segundos`
-                            : `// Define o tempo de envio para ${commandSyntax.split('|')[1]} segundos`
-                        }
-                    </pre>
-                </div>
+                    </div>
+  <p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
+ <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
+   {commandSyntax} 
+ </pre>
+</div>
             </div>
         </div>
     );
@@ -372,14 +369,13 @@ const Command404Details = () => {
                         className="p-2 text-sm font-mono flex-grow"
                         max={MAX_TEMP_VALUE} 
                     />
-                    <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
-                        {commandSyntax} 
-                        {parseInt(seconds, 10) === 0 
-                            ? `// Configura a correção do sensor 1 em ${commandSyntax.split('|')[1]} graus celsius.`
-                            : `// Configura a correção do sensor 1 em ${commandSyntax.split('|')[1]} graus celsius.`
-                        }
-                    </pre>
-                </div>
+                    </div>
+  <p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
+ <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
+   {commandSyntax} 
+ </pre>
+</div>
             </div>
         </div>
     );
@@ -467,14 +463,13 @@ const Command405Details = () => {
                         className="p-2 text-sm font-mono flex-grow"
                         max={MAX_TEMP_VALUE} 
                     />
-                    <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
-                        {commandSyntax} 
-                        {parseInt(seconds, 10) === 0 
-                            ? `// Configura a correção do sensor 2 em ${commandSyntax.split('|')[1]} graus celsius.`
-                            : `// Configura a correção do sensor 2 em ${commandSyntax.split('|')[1]} graus celsius.`
-                        }
-                    </pre>
-                </div>
+                    </div>
+  <p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
+ <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
+   {commandSyntax} 
+ </pre>
+</div>
             </div>
         </div>
     );
@@ -562,14 +557,13 @@ const Command406Details = () => {
                         className="p-2 text-sm font-mono flex-grow"
                         max={MAX_TEMP_VALUE} 
                     />
-                    <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
-                        {commandSyntax} 
-                        {parseInt(seconds, 10) === 0 
-                            ? `// Configura a correção do sensor 3 em ${commandSyntax.split('|')[1]} graus celsius.`
-                            : `// Configura a correção do sensor 3 em ${commandSyntax.split('|')[1]} graus celsius.`
-                        }
-                    </pre>
-                </div>
+                    </div>
+  <p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
+ <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
+   {commandSyntax} 
+ </pre>
+</div>
             </div>
         </div>
     );
@@ -656,14 +650,13 @@ const Command407Details = () => {
                         className="p-2 text-sm font-mono flex-grow"
                         max={MAX_TEMP_VALUE} 
                     />
-                    <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
-                        {commandSyntax} 
-                        {parseInt(seconds, 10) === 0 
-                            ? `// Seta o valor maximo do alerta no sensor 1 em ${commandSyntax.split('|')[1]} graus celsius.`
-                            : `// Seta o valor maximo do alerta no sensor 1 em ${commandSyntax.split('|')[1]} graus celsius.`
-                        }
-                    </pre>
-                </div>
+                    </div>
+  <p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
+ <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
+   {commandSyntax} 
+ </pre>
+</div>
             </div>
         </div>
     );
@@ -750,14 +743,13 @@ const Command408Details = () => {
                         className="p-2 text-sm font-mono flex-grow"
                         max={MAX_TEMP_VALUE} 
                     />
-                    <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
-                        {commandSyntax} 
-                        {parseInt(seconds, 10) === 0 
-                            ? `// Seta o valor maximo do alerta no sensor 2 em ${commandSyntax.split('|')[1]} graus celsius.`
-                            : `// Seta o valor maximo do alerta no sensor 2 em ${commandSyntax.split('|')[1]} graus celsius.`
-                        }
-                    </pre>
-                </div>
+                    </div>
+  <p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
+ <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
+   {commandSyntax} 
+ </pre>
+</div>
             </div>
         </div>
     );
@@ -844,14 +836,13 @@ const Command409Details = () => {
                         className="p-2 text-sm font-mono flex-grow"
                         max={MAX_TEMP_VALUE} 
                     />
-                    <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
-                        {commandSyntax} 
-                        {parseInt(seconds, 10) === 0 
-                            ? `// Seta o valor maximo do alerta no sensor 3 em ${commandSyntax.split('|')[1]} graus celsius.`
-                            : `// Seta o valor maximo do alerta no sensor 3 em ${commandSyntax.split('|')[1]} graus celsius.`
-                        }
-                    </pre>
-                </div>
+                    </div>
+  <p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
+ <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
+   {commandSyntax} 
+ </pre>
+</div>
             </div>
         </div>
     );
@@ -938,14 +929,13 @@ const Command410Details = () => {
                         className="p-2 text-sm font-mono flex-grow"
                         max={MAX_TEMP_VALUE} 
                     />
-                    <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
-                        {commandSyntax} 
-                        {parseInt(seconds, 10) === 0 
-                            ? `// Seta o valor minimo do alerta no sensor 1 em ${commandSyntax.split('|')[1]} graus celsius.`
-                            : `// Seta o valor minimo do alerta no sensor 1 em ${commandSyntax.split('|')[1]} graus celsius.`
-                        }
-                    </pre>
-                </div>
+                    </div>
+  <p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
+ <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
+   {commandSyntax} 
+ </pre>
+</div>
             </div>
         </div>
     );
@@ -1032,14 +1022,13 @@ const Command411Details = () => {
                         className="p-2 text-sm font-mono flex-grow"
                         max={MAX_TEMP_VALUE} 
                     />
-                    <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
-                        {commandSyntax} 
-                        {parseInt(seconds, 10) === 0 
-                            ? `// Seta o valor minimo do alerta no sensor 2 em ${commandSyntax.split('|')[1]} graus celsius.`
-                            : `// Seta o valor minimo do alerta no sensor 2 em ${commandSyntax.split('|')[1]} graus celsius.`
-                        }
-                    </pre>
-                </div>
+                    </div>
+  <p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
+ <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
+   {commandSyntax} 
+ </pre>
+</div>
             </div>
         </div>
     );
@@ -1126,14 +1115,13 @@ const Command412Details = () => {
                         className="p-2 text-sm font-mono flex-grow"
                         max={MAX_TEMP_VALUE} 
                     />
-                    <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
-                        {commandSyntax} 
-                        {parseInt(seconds, 10) === 0 
-                            ? `// Seta o valor minimo do alerta no sensor 3 em ${commandSyntax.split('|')[1]} graus celsius.`
-                            : `// Seta o valor minimo do alerta no sensor 3 em ${commandSyntax.split('|')[1]} graus celsius.`
-                        }
-                    </pre>
-                </div>
+                    </div>
+  <p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
+ <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
+   {commandSyntax} 
+ </pre>
+</div>
             </div>
         </div>
     );
@@ -1256,6 +1244,9 @@ const Command413Details = () => {
                         <option value="0">0: Desativado</option>
                         <option value="1">1: Ativo</option>
                     </select>
+                    </div>
+ <p className="font-semibold text-gray-800">Comando</p>
+<div className='flex items-center space-x-2'>
                     <pre className="bg-gray-100 p-2 rounded-lg border border-gray-300 text-sm font-mono whitespace-pre-wrap flex-grow-0 min-w-[200px]"> 
                         {commandSyntax} 
                         {mode === '0' }
@@ -1282,6 +1273,7 @@ function App() {
   const COMMAND_OPTIONS = [
     { id: '401', name: 'Comando 401 - Tempo de envio Ignição ligada ', Component: Command401Details },
     { id: '402', name: `Comando 402 - Tempo de envio Ignição desligada`, Component: Command402Details }, 
+    { id: '403', name: 'Comando 403 - Tempo de envio Em alerta ', Component: Command403Details },
     { id: '404', name: 'Comando 404 - Correção sensor 1 ', Component: Command404Details },
     { id: '405', name: 'Comando 405 - Correção sensor 2', Component: Command405Details },
     { id: '406', name: 'Comando 406 - Correção sensor 3', Component: Command406Details }, 
