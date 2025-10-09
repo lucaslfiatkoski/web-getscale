@@ -946,7 +946,7 @@ function Home() {
                 <div>
                   <p className="text-sm text-gray-600">
                     • <a 
-                        href="/assets/GS404_GS100_GS501_Configurador_1_21.zip" // Mude para o caminho real do arquivo
+                        href="/GS404_GS100_GS501_Configurador_1_21.zip" // Mude para o caminho real do arquivo
                         download="GS404_GS100_GS501_Configurador_1_21.zip" // Adiciona o atributo 'download' e sugere um nome para o arquivo
                         className="text-blue-600 hover:underline"
                       >
@@ -957,7 +957,7 @@ function Home() {
                 <div>
                   <p className="text-sm text-gray-600">
                     • <a 
-                        href="/assets/GS_601_Configurador_1_1.zip" // Mude para o caminho real do arquivo
+                        href="/GS_601_Configurador_1_1.zip" // Mude para o caminho real do arquivo
                         download="GS_601_Configurador_1_1.zip" // Adiciona o atributo 'download' e sugere um nome para o arquivo
                         className="text-blue-600 hover:underline"
                       >
@@ -968,7 +968,7 @@ function Home() {
                 <div>
                   <p className="text-sm text-gray-600">
                     • <a 
-                        href="/assets/GS-302_Configurador_0_5.zip" // Mude para o caminho real do arquivo
+                        href="/GS-302_Configurador_0_5.zip" // Mude para o caminho real do arquivo
                         download="GS-302_Configurador_0_5.zip" // Adiciona o atributo 'download' e sugere um nome para o arquivo
                         className="text-blue-600 hover:underline"
                       >
