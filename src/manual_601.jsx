@@ -15,6 +15,7 @@ import Ledjornada from './assets/ledjornada.png'
 import Cartao from './assets/cartao601.png'
 import led1 from './assets/led1.png'
 import led2 from './assets/led2.png'
+import led4 from './assets/led4.png'
 import led3 from './assets/led3.png'
 import Logo from './assets/logo.png'
 
@@ -347,7 +348,7 @@ function ManualGs601() {
             
                 <img 
               src={Cartao} 
-              className="flex justify-center mx-50 h-100 w-flex "
+              className="flex justify-center mx-auto h-130 w-auto "
               />
             
             <p>
@@ -359,7 +360,7 @@ function ManualGs601() {
             <br></br>
                 <img 
                 src={Ledjornada} 
-                className="flex justify-center mx-50 h-100 w-flex "
+                className="flex justify-center  mx-auto h-100 w-auto "
                 />
             <br></br>
             <p>
@@ -371,7 +372,7 @@ function ManualGs601() {
             <br></br>
              <img 
               src={led1} 
-              className="flex justify-center mx-55 h-100 w-flex "
+              className="flex justify-center mx-auto h-100 w-auto "
               />
             <p>
               Após iniciada uma das funções de Refeição, Repouso ou Espera, seu led vai ser 
@@ -381,11 +382,15 @@ function ManualGs601() {
             <br></br>
              <img 
               src={led2} 
-              className="flex justify-center mx-15 h-100 w-flex "
+              className="flex justify-center mx-auto h-100 w-auto "
+              />
+              <img 
+              src={led4} 
+              className="flex justify-center mx-auto h-100 w-auto "
               />
               <img 
               src={led3} 
-              className="flex justify-center mx-55 h-100 w-flex "
+              className="flex justify-center mx-auto h-100 w-auto "
               />
             <div className=''>
               <h3 className="text-xl font-semibold text-gray-700 mb-3 mt-8 border-l-4 border-green-500 pl-3">

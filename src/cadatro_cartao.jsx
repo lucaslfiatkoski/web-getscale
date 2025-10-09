@@ -77,7 +77,7 @@ const CardAdditionCommandGenerator = () => {
     // --- ESTRUTURA JSX ---
     return (
         // Container principal com largura máxima e CENTRALIZADO (mx-auto adicionado)
-        <div className="bg-white p-6 rounded-xl w-200 mx-auto shadow-lg border border-gray-100">
+        <div className="bg-white p-6 rounded-xl w-auto mx-auto shadow-lg border border-gray-100">
             <div className="mb-6 text-center">
                 <h3 className="text-2xl font-bold text-blue-800 mb-1 flex items-center justify-center space-x-2">
                     <CreditCard className="w-5 h-5 text-blue-600" />
