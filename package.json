@@ -4,10 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start:dev": "vercel dev", 
-    "dev": "dotenv -e .env.local -- npm run start:dev", 
-    "build": "next build", 
-    "start": "next start" 
+    "start:dev": "vercel dev",
+    "dev": "dotenv -e .env.local -- npm run start:dev",
+    "build": "vite build", 
+    "start": "vite preview" 
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
