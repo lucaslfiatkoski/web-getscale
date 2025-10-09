@@ -849,7 +849,7 @@ function Home() {
               Suporte Técnico
             </Badge>
             <h2 className="text-4xl font-bold text-gray-900 mb-10">
-              Manuais e Documentação
+              Manuais, Documentações e Configuradores
             </h2>
           </div>
 
@@ -986,7 +986,7 @@ function Home() {
           
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Esquema de ligação e configuração com rastreadores
+              Esquemas de ligações e configurações com rastreadores
             </h2>
           </div>
 
