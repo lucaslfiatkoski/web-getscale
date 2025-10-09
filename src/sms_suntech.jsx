@@ -447,11 +447,20 @@ function App() {
                   </div>
                   <div className="bg-white p-6 rounded-xl shadow-lg">
                     <h4 className="font-semibold mb-2">2. Ligação (Invertida)</h4>
-                    <p className="text-sm text-gray-600">Inverter RX e TX: TX do acessório no RX do rastreador e vice-versa.</p>
+                    <p className="text-sm text-gray-600">
+                      Inverter RX e TX: TX do acessório no RX do rastreador 
+                      e RX do acessório no TX do rastreador.
+                    </p>
                   </div>
+
                   <div className="bg-white p-6 rounded-xl shadow-lg">
-                    <h4 className="font-semibold mb-2">3. Configuração</h4>
-                    <p className="text-sm text-gray-600">Configurar o rastreador com taxa de transmissão padrão **19200 8N1**.</p>
+                    <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                      <span className="text-xl font-bold text-purple-600">3</span>
+                    </div>
+                    <h4 className="font-semibold mb-2">Configuração</h4>
+                    <p className="text-sm text-gray-600">
+                      Configurar porta RS232 do rastreador para 19200 Bps.
+                    </p>
                   </div>
                 </div>
               </CardContent>

@@ -20,7 +20,9 @@ import {
   Star,
   CheckCircle,
   MessageSquare,
-  MessageCircle
+  MessageCircle,
+  Link2
+  
 } from 'lucide-react'
 import './App.css'
 import { Link, Routes, Route, BrowserRouter } from "react-router-dom";
@@ -855,7 +857,7 @@ function Home() {
             <Card className="justify-center w-full hover:shadow-xl transition-shadow border-0 shadow-lg ">
                 <CardHeader>
                   <CardTitle className="flex items-center space-x-2">
-                    <Download className="w-5 h-5 text-purple-600" />
+                    <Link2 className="w-5 h-5 text-blue-600" />
                     <span>Manuais</span>
                   </CardTitle>
                 </CardHeader>
@@ -895,7 +897,7 @@ function Home() {
             <Card className="hover:shadow-xl transition-shadow border-0 shadow-lg ">
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
-                  <Download className="w-5 h-5 text-purple-600" />
+                  <Link2 className="w-5 h-5 text-green-600" />
                   <span>Protocolos</span>
                 </CardTitle>
               </CardHeader>
@@ -933,6 +935,50 @@ function Home() {
                 
               </CardContent>
             </Card>
+            <Card className="hover:shadow-xl transition-shadow border-0 shadow-lg ">
+              <CardHeader>
+                <CardTitle className="flex items-center space-x-2">
+                  <Download className="w-5 h-5 text-purple-600" />
+                  <span>Configuradores</span>
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <div>
+                  <p className="text-sm text-gray-600">
+                    • <a 
+                        href="/assets/GS404_GS100_GS501_Configurador_1_21.zip" // Mude para o caminho real do arquivo
+                        download="GS404_GS100_GS501_Configurador_1_21.zip" // Adiciona o atributo 'download' e sugere um nome para o arquivo
+                        className="text-blue-600 hover:underline"
+                      >
+                        Configurador GS-404, GS-100 e GS-501
+                      </a>
+                  </p>
+                </div>
+                <div>
+                  <p className="text-sm text-gray-600">
+                    • <a 
+                        href="/assets/GS_601_Configurador_1_1.zip" // Mude para o caminho real do arquivo
+                        download="GS_601_Configurador_1_1.zip" // Adiciona o atributo 'download' e sugere um nome para o arquivo
+                        className="text-blue-600 hover:underline"
+                      >
+                        Configurador GS-601
+                      </a>
+                  </p>
+                </div>
+                <div>
+                  <p className="text-sm text-gray-600">
+                    • <a 
+                        href="/assets/GS-302_Configurador_0_5.zip" // Mude para o caminho real do arquivo
+                        download="GS-302_Configurador_0_5.zip" // Adiciona o atributo 'download' e sugere um nome para o arquivo
+                        className="text-blue-600 hover:underline"
+                      >
+                        Configurador GS-302
+                      </a>
+                  </p>
+                </div>
+                
+              </CardContent>
+            </Card>
             
 
           </div>
@@ -949,7 +995,7 @@ function Home() {
             <Card className="hover:shadow-xl transition-shadow border-0 shadow-lg ">
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
-                  <Download className="w-5 h-5 text-blue-600" />
+                  <Link2 className="w-5 h-5 text-blue-600" />
                   <span>GS-404 / GS-100 / GS-501</span>
                 </CardTitle>
               </CardHeader>
@@ -1079,7 +1125,7 @@ function Home() {
             <Card className="hover:shadow-xl transition-shadow border-0 shadow-lg">
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
-                  <Download className="w-5 h-5 text-green-600" />
+                  <Link2 className="w-5 h-5 text-green-600" />
                   <span>GS-601</span>
                 </CardTitle>
               </CardHeader>
@@ -1124,7 +1170,7 @@ function Home() {
             <Card className="hover:shadow-xl transition-shadow border-0 shadow-lg">
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
-                  <Download className="w-5 h-5 text-purple-600" />
+                  <Link2 className="w-5 h-5 text-purple-600" />
                   <span>GS-302</span>
                 </CardTitle>
               </CardHeader>
@@ -1169,7 +1215,7 @@ function Home() {
             <Card className="hover:shadow-xl transition-shadow border-0 shadow-lg">
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
-                  <Download className="w-5 h-5 text-purple-600" />
+                  <Link2 className="w-5 h-5 text-blue-600" />
                   <span>Conversor para cartões RFID</span>
                 </CardTitle>
               </CardHeader>
@@ -1211,7 +1257,7 @@ function Home() {
             <Card className="hover:shadow-xl transition-shadow border-0 shadow-lg">
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
-                  <Download className="w-5 h-5 text-purple-600" />
+                  <Link2 className="w-5 h-5 text-green-600" />
                   <span>Gerador de Comandos</span>
                 </CardTitle>
               </CardHeader>
@@ -1290,7 +1336,7 @@ function Home() {
                     <h4 className="font-semibold mb-2">Ligação</h4>
                     <p className="text-sm text-gray-600">
                       Inverter RX e TX: TX do acessório no RX do rastreador 
-                      e vice-versa.
+                      e RX do acessório no TX do rastreador.
                     </p>
                   </div>
 
@@ -1300,8 +1346,7 @@ function Home() {
                     </div>
                     <h4 className="font-semibold mb-2">Configuração</h4>
                     <p className="text-sm text-gray-600">
-                      Configurar o rastreador com taxa de transmissão 
-                      padrão 19200 8N1.
+                      Configurar porta RS232 do rastreador para 19200 Bps.
                     </p>
                   </div>
                 </div>
