@@ -24,7 +24,7 @@ import cartaoAImage from './assets/cartao_a.png';
 import Logo from './assets/logo.png';
 
 const whatsappNumber = '5541991676700'; // Formato internacional sem caracteres especiais
-const whatsappMessage = 'Olá, Getscale! Gostaria de falar com o suporte técnico sobre produtos e ligações.';
+const whatsappMessage = 'Olá, Getscale! Gostaria de falar com o suporte técnico.';
 const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
 const RFiDConverter = () => {

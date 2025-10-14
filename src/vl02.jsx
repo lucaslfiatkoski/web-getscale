@@ -8,17 +8,18 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Logo from './assets/logo.png'; // Presumindo que o Logo também será usado aqui
 
 import flyerImage from './assets/flyer_produtos_gs404.webp'
-import rastreadorImage from './assets/st8300_rastreador_rs232.webp'
-import synctrackImage from './assets/synctrack_taxa_transmissao.webp'
+import ParametrosImage from './assets/parametros.png'
+import ServicoImage from './assets/servico.jpg'
+
 
 // Dados de Cores dos Fios
 const wireColors = [
-    { acessorio: 'Vermelho', acessorioBg: 'bg-red-600', funcao: '🔌 VCC - Positivo - 12/24 Volts', rastreador: 'Vermelho', rastreadorBg: 'bg-red-600' },
-    { acessorio: 'Marrom', acessorioBg: 'bg-amber-800', funcao: '🔋 GND - Negativo', rastreador: 'Preto', rastreadorBg: 'bg-black' },
-    { acessorio: 'Azul', acessorioBg: 'bg-blue-600', funcao: '🚗 Ignição', rastreador: 'Azul', rastreadorBg: 'bg-blue-600' },
-    { acessorio: 'Verde', acessorioBg: 'bg-green-600', funcao: '📤 TX (Transmissão) - Ligado ao RX do Rastreador', rastreador: 'Branco', rastreadorBg: 'bg-white' },
-    { acessorio: 'Laranja', acessorioBg: 'bg-orange-500', funcao: '📥 RX (Recepção) - Ligado ao TX do Rastreador', rastreador: 'Verde', rastreadorBg: 'bg-green-600' },
-    { acessorio: 'Cinza', acessorioBg: 'bg-gray-500', funcao: '🧬 OneWire', rastreador: 'Amarelo', rastreadorBg: 'bg-yellow-300' },
+    { acessorio: 'Vermelho', acessorioBg: 'bg-red-600', funcao: '🔌 VCC - Positivo - 12/24 Volts', rastreador: 'Vermelho do conector PWR', rastreadorBg: 'bg-red-600' },
+    { acessorio: 'Marrom', acessorioBg: 'bg-amber-800', funcao: '🔋 GND - Negativo', rastreador: 'Marrom do conector PWR', rastreadorBg: 'bg-amber-800' },
+    { acessorio: 'Azul', acessorioBg: 'bg-blue-600', funcao: '🚗 Ignição', rastreador: 'Amarelo do conector PWR', rastreadorBg: 'bg-yellow-300' },
+    { acessorio: 'Verde', acessorioBg: 'bg-green-600', funcao: '📤 TX (Transmissão) - Ligado ao RX do Rastreador', rastreador: '	Azul do conector TTL', rastreadorBg: 'bg-blue-600' },
+    { acessorio: 'Laranja', acessorioBg: 'bg-orange-500', funcao: '📥 RX (Recepção) - Ligado ao TX do Rastreador', rastreador: 'Verde do conector TTL', rastreadorBg: 'bg-green-600' },
+    { acessorio: 'Cinza', acessorioBg: 'bg-gray-500', funcao: '🧬 OneWire', rastreador: 'NC', rastreadorBg: 'bg-gray-300' },
     { acessorio: 'Amarelo', acessorioBg: 'bg-yellow-300', funcao: '🔔 Saída para bloqueio ou buzzer', rastreador: 'NC', rastreadorBg: 'bg-gray-300' },
 ]
 
@@ -30,7 +31,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 // ======================================================
 // =============== NOVO COMPONENTE PRINCIPAL ============
 // ======================================================
-function Suntech4305() {
+function Suntech300h() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [formData, setFormData] = useState({
     nome: '',
@@ -138,16 +139,16 @@ function Suntech4305() {
               <div className="flex-1 bg-white shadow-xl rounded-2xl p-6 sm:p-8 font-inter">
                 {/* Breadcrumb */}
                 <div className="text-sm text-gray-500 mb-4">
-                  <Link to="/suntech-404" className="text-blue-600 hover:underline">Integrações Suntech</Link>
-                  <span> / gs404st8300</span>
+                  <Link to="/Jimi-404" className="text-blue-600 hover:underline">Integrações jimi</Link>
+                  <span> / gs404VL02</span>
                 </div>
 
                 {/* Title */}
                 <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 border-b pb-3 mb-6">
-                  <Pin className="inline w-6 h-6 mr-2 text-blue-600" /> GS-100, GS404 e GS-501 com Suntech ST4305 / ST8300 / ST8300H
+                  <Pin className="inline w-6 h-6 mr-2 text-blue-600" /> GS-100, GS404 e GS-501 com Jimi VL02
                 </h1>
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  Instruções completas para ligação dos fios e configuração dos modelos ST4305, ST8300 e ST8300H com suporte a RS232 e OneWire.
+                  Instruções completas para ligação dos fios e configuração dos modelos VL02 com suporte a TTL
                 </p>
 
                 {/* Product Image */}
@@ -162,7 +163,7 @@ function Suntech4305() {
                 {/* Wire Color Table Section */}
                 <section id="tabela-cores" className="mb-12">
                   <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                    🎨 Tabela de Cores – GS-100, GS404 e GS-501 x Suntech ST4305 / ST8300 / ST8300H
+                    🎨 Tabela de Cores – GS-100, GS404 e GS-501 x Jimi VL02 com conectores PWR e TTL
                   </h2>
                   
                   <div className="overflow-x-auto bg-white rounded-lg shadow border border-gray-200">
@@ -184,7 +185,7 @@ function Suntech4305() {
                             </td>
                             <td className="px-4 py-3 text-gray-700">{row.funcao}</td>
                             <td className="px-4 py-3">
-                              <div className={`${row.rastreadorBg} ${row.rastreador === 'Branco' || row.rastreador === 'NC' || row.rastreador === 'Amarelo' ? 'text-gray-900' : 'text-white'} px-3 py-2 rounded font-medium text-center`}>
+                              <div className={`${row.rastreadorBg} ${row.rastreador === 'Branco' || row.rastreador === 'NC' || row.rastreador === 'Amarelo do conector PWR' ? 'text-gray-900' : 'text-white'} px-3 py-2 rounded font-medium text-center`}>
                                 {row.rastreador}
                               </div>
                             </td>
@@ -194,60 +195,71 @@ function Suntech4305() {
                     </table>
                   </div>
 
-                  {/* Observation Box */}
-                  <div className="mt-6 bg-green-50 border-l-4 border-green-500 p-4 rounded-lg">
-                    <div className="flex items-center gap-2">
-                      <span className="text-green-700 font-semibold">ℹ️ Observação:</span>
-                    </div>
-                    <p className="text-gray-700 mt-2">
-                      O acessório pode ser conectado ao rastreador utilizando <strong>interface RS232 (TX e RX)</strong> ou <strong>interface OneWire (fio cinza)</strong>.
-                    </p>
-                    <p className="text-gray-700 mt-2">
-                      Não é necessário utilizar ambas ao mesmo tempo. Certifique-se de que a função OneWire esteja ativa no acessório antes de utilizá-la.
-                    </p>
-                    <p className="text-gray-700 mt-2 font-semibold">
-                      🔌 Nos modelos <strong>ST4305 / ST8300 / ST8300H</strong>, a interface <strong>RS232 está localizada no conector de 4 vias</strong> e não no conector principal do rastreador.
-                    </p>
-                  </div>
 
-                  {/* Rastreador Image */}
-                  <div className="mt-6 bg-white p-4 rounded-lg shadow border border-gray-200">
-                    <h3 className="text-lg font-semibold mb-3">Localização do Conector RS232 no ST8300</h3>
-                    <img
-                      src={rastreadorImage}
-                      alt="ST8300 4G com conector RS232"
-                      className="w-full max-w-md mx-auto"
-                    />
-                  </div>
+                 
                 </section>
 
                 {/* Configuration Section */}
                 <section id="configuracao" className="mb-12">
                   <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                    <Cpu className="w-6 h-6 text-blue-600" /> Configuração – Suntech ST4305 / ST8300 / ST8300H
+                    <Cpu className="w-6 h-6 text-blue-600" /> Configuração – VL02
                   </h2>
 
                   <Card className="shadow-lg">
                     <CardHeader>
                       <CardTitle className="text-xl text-gray-800">
-                        📌 Passo 1 – Definir a taxa de transmissão (Baud Rate)
+                        ⚙️  Configuração da Porta TTL no Jimi VL02
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
                       <p className="text-gray-700 mb-4">
-                        No software <strong>SyncTrack</strong>, acesse o menu <strong>Serial RS232</strong> e selecione o Baud Rate <strong>19200 bps</strong>.
+                       Para que o acessório funcione corretamente com o rastreador Jimi VL02, é necessário configurar a porta TTL a 19200bps.
+                      </p>
+                      <p className="text-gray-700 mb-4">
+                        Para utilização da comunicação serial, é utilizado o seguinte comando:
+                      </p>
+                      <p className="border text-center text-black-700 mb-4">
+                       <strong>TRAN,ON,3,2#</strong>
+                      </p>
+                      <p className="text-gray-700 mb-4">
+                        Onde:
+                      </p>
+                    <ul className="text-gray-700 mt-2 space-y-1 ml-4 list-disc list-inside">
+                      <li><strong>TRAN:</strong> Descreve o comando a ser enviado.</li>
+                      <li><strong>SW:</strong> Liga/desliga monitoramento da porta TTL (ON/OFF).</li>
+                      <li><strong>A:</strong> Ativação da porta serial TTL.</li>
+                      <ul className="text-gray-700 mt-2 space-y-1 ml-4 list-disc list-inside"> 
+                        <li>A=3: Dados Transparentes</li>
+                      </ul>
+                      <li><strong>B:</strong> Baud Rate (0-6).</li>
+                      <ul className="text-gray-700 mt-2 space-y-1 ml-4 list-disc list-inside"> 
+                        <li>0: 4800bps</li>
+                        <li>1: 9600bps</li>
+                        <li>2: 19200bps</li>
+                        <li>3: 14400bps</li>
+                        <li>4: 38400bps</li>
+                        <li>5: 57600bps</li>
+                        <li>6: 115200bps</li>
+                      </ul>
+                    </ul><br></br>
+                    <p className="text-gray-700 mb-4">
+                        <strong>Exemplo para configuração a 19200bps:</strong> TRAN,ON,3,2#
                       </p>
 
-                      {/* SyncTrack Image */}
-                      <div className="mb-6 bg-white p-4 rounded-lg shadow border border-gray-200">
-                        <img
-                          src={synctrackImage}
-                          alt="SyncTrack - Taxa de Transmissão"
-                          className="w-full max-w-lg mx-auto rounded border border-gray-200"
-                        />
-                      </div>
+                      
+                    </CardContent>
+                    <CardHeader>
+                      <CardTitle className="text-xl text-gray-800">
+                        📟 Teste de funcionamento
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-gray-700 mb-4">
+                        Após a configuração da porta TTL, aproxime um cartão do leitor para verificar o funcionamento.
+                      </p>
                     </CardContent>
                   </Card>
+                  
 
                   {/* Warning Box */}
                   <div className="mt-6 bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded-lg shadow">
@@ -346,4 +358,4 @@ function Suntech4305() {
 }
 
 
-export default Suntech4305;
+export default Suntech300h;

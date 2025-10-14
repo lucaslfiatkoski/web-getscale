@@ -25,7 +25,7 @@ const wireColors = [
 
 // Configurações do WhatsApp
 const whatsappNumber = '5541991676700';
-const whatsappMessage = 'Olá, Getscale! Gostaria de falar com o suporte técnico sobre a integração Suntech ST4305/ST8300.';
+const whatsappMessage = 'Olá, Getscale! Gostaria de falar com o suporte técnico.';
 const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
 // ======================================================
@@ -140,7 +140,7 @@ function Suntech8300r() {
                 {/* Breadcrumb */}
                 <div className="text-sm text-gray-500 mb-4">
                   <Link to="/suntech-404" className="text-blue-600 hover:underline">Integrações Suntech</Link>
-                  <span> / gs404st300H</span>
+                  <span> / gs404st300r</span>
                 </div>
 
                 {/* Title */}

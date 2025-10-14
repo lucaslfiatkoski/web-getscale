@@ -7,7 +7,7 @@ import { Textarea } from '@/components/ui/textarea.jsx';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Logo from './assets/logo.png';
 
-// Lazy load da página Suntech4305
+
 
 
 const whatsappNumber = '5541991676700';
@@ -17,7 +17,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 // ======================================================
 // =============== COMPONENTE PRINCIPAL =================
 // ======================================================
-function Suntech404() {
+function Jimi404() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [formData, setFormData] = useState({
     nome: '',
@@ -121,60 +121,23 @@ function Suntech404() {
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="bg-white shadow-xl rounded-2xl p-6 sm:p-8 font-inter">
             <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 border-b pb-3 mb-6">
-              📌 GS-404 / GS-100 / GS-501 com Suntech
+              📌 GS-404 / GS-100 / GS-501 com Jimi
             </h1>
 
             <p>
-              Esta página contém as integrações dos dispositivos GS-404,
-              GS-100 e GS-501 com os modelos da marca Suntech. 
-              Escolha abaixo o modelo desejado para acessar as instruções detalhadas de instalação e configuração.
+              Esta página contém as integrações dos dispositivos GS-404, GS-100 e GS-501 com os modelos da marca Jimi. Acesse abaixo o modelo desejado para instruções completas de instalação e configuração.
             </p>
 
             <br />
 
             <h2 className="text-2xl font-bold mb-4">🚗 Modelos compatíveis</h2>
 
-            <p className="text-gray-600 mb-3">
-              • <Link to= '/suntech-404/st4305' // <<< Este é o caminho correto para o seu Link
-                className=" text-lg text-blue-600 underline">ST4305 / ST8300 / ST8300H 📍</Link>
+            <p className="text-gray-600 mb-2">
+              • <Link to= '/Jimi-404/vl02' // <<< Este é o caminho correto para o seu Link
+                className="text-lg text-blue-600 underline"> JIMI VL02 </Link>
             </p>
             <p className="text-gray-700 mb-6 leading-relaxed">
-              Instruções completas para ligação dos fios e configuração dos modelos ST4305, ST8300 e ST8300H com suporte a RS232 e OneWire.
-            </p>
-            <p className="text-gray-600 mb-3">
-              • <Link to= '/suntech-404/st300h' // <<< Este é o caminho correto para o seu Link
-                className="text-lg text-blue-600 underline">ST300H / ST300HD / ST300R 📍</Link>
-            </p>
-            <p className="text-gray-700 mb-6 leading-relaxed">
-              Instruções completas para ligação dos fios e configuração dos modelos ST300H, ST300HD e ST300R com suporte a RS232 e OneWire.
-            </p>
-            <p className="text-gray-600 mb-3">
-              • <Link to= '/suntech-404/s340' // <<< Este é o caminho correto para o seu Link
-                className="text-lg text-blue-600 underline"> 340RB / 340UR📍</Link>
-            </p>
-            <p className="text-gray-700 mb-6 leading-relaxed">
-              Instruções específicas para instalação física e configuração via software SyncTrack e comandos SMS para os modelos 340RB e 340UR.
-            </p>
-            <p className="text-gray-600 mb-3">
-              • <Link to= '/suntech-404/st8300r' // <<< Este é o caminho correto para o seu Link
-                className="text-lg text-blue-600 underline"> ST8300R 📍</Link>
-            </p>
-            <p className="text-gray-700 mb-6 leading-relaxed">
-              Instruções específicas para o modelo ST8300R.
-            </p>
-            <p className="text-gray-600 mb-3">
-              • <Link to= '/suntech-404/st8310w' // <<< Este é o caminho correto para o seu Link
-                className="text-lg text-blue-600 underline"> ST8310W📍</Link>
-            </p>
-            <p className="text-gray-700 mb-6 leading-relaxed">
-              Instruções específicas para o modelo ST8310W via OneWire.
-            </p>
-            <p className="text-gray-600 mb-3">
-              • <Link to= '/suntech-404/st8310r' // <<< Este é o caminho correto para o seu Link
-                className="text-lg text-blue-600 underline">  ST8310R📍</Link>
-            </p>
-            <p className="text-gray-700 mb-6 leading-relaxed">
-              Instruções específicas para o modelo ST8310R via RS232.
+              Instruções de ligação elétrica e configuração com Jimi VL02 com os dispositivos GS-404, GS-100 e GS-501.
             </p>
           </div>
 
@@ -281,5 +244,5 @@ function Suntech404() {
 }
 
 
-export default Suntech404;
+export default Jimi404;
 

@@ -52,8 +52,16 @@ const Suntech300h = lazy(() => import('./st300h.jsx'));
 const Suntech340h = lazy(() => import('./s340.jsx'));
 const Suntech8300r = lazy(() => import('./st8300r.jsx'));
 const Suntech8310w = lazy(() => import('./st8310w.jsx'));
-
-
+const Suntech8310r = lazy(() => import('./st8310r.jsx'));
+const Entrack404 = lazy(() => import('./entrack404.jsx'));
+const Entrack300r = lazy(() => import('./vl300r.jsx'));
+const Getrak404 = lazy(() => import('./getrak404.jsx'));
+const Gtkse = lazy(() => import('./gtkse.jsx'));
+const Jimi404 = lazy(() => import('./jimi404.jsx'));
+const Vl02 = lazy(() => import('./vl02.jsx'));
+const Multiportal404 = lazy(() => import('./multiportal404.jsx'));
+const Rstmini = lazy(() => import('./rstmini.jsx'));
+const Rstvt2 = lazy(() => import('./vt2.jsx'));
 
 
 // Import das imagens
@@ -118,7 +126,7 @@ function Home() {
   }
 
   const whatsappNumber = '5541991676700'; // Formato internacional sem caracteres especiais
-  const whatsappMessage = 'Olá, Getscale! Gostaria de falar com o suporte técnico sobre produtos e ligações.';
+  const whatsappMessage = 'Olá, Getscale! Gostaria de falar com o suporte técnico.';
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
@@ -1004,44 +1012,37 @@ function Home() {
               <CardContent className="space-y-3">
                 <div className="space-y-2">
                   <p className="text-sm text-gray-600">
-                    • <a 
-                        href="http://wiki.getscale.com.br/pt-br/gs404_entrack" 
-                        className="text-blue-600 hover:underline" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                      >
-                        GS-404 / GS-100 / GS-501 com Entrack
-                      </a>
+                    
+                    • <Link 
+                              to="/entrack-404" 
+                              className="text-blue-600 hover:underline"
+                          >
+                             GS-404 / GS-100 / GS-501 com Entrack
+                          </Link>
                   </p>
                   <p className="text-sm text-gray-600">
-                    • <a 
-                        href="http://wiki.getscale.com.br/pt-br/gs404getrak" 
+                    • <Link
+                        to='/getrak-404'
                         className="text-blue-600 hover:underline" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
                       >
                         GS-404 / GS-100 / GS-501 com Getrak
-                      </a>
+                      </Link>
                   </p>
                   <p className="text-sm text-gray-600">
-                    • <a 
-                        href="http://wiki.getscale.com.br/pt-br/gs404jimi" 
-                        className="text-blue-600 hover:underline" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
+                    • <Link 
+                        to="/jimi-404" 
+                        className="text-blue-600 hover:underline"           
                       >
                         GS-404 / GS-100 / GS-501 com Jimi
-                      </a>
+                      </Link>
                   </p>
                   <p className="text-sm text-gray-600">
-                    • <a 
-                        href="http://wiki.getscale.com.br/pt-br/gs404multiportal" 
+                    • <Link 
+                        to="/multiportal-404" 
                         className="text-blue-600 hover:underline" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
                       >
                         GS-404 / GS-100 / GS-501 com Multiportal
-                      </a>
+                      </Link>
                   </p>
                   <p className="text-sm text-gray-600">
                     • <a 
@@ -1568,7 +1569,16 @@ function App() {
         <Route path="/suntech-404/s340" element={<Suntech340h />} />
         <Route path="/suntech-404/st8300r" element={<Suntech8300r />} />
         <Route path="/suntech-404/st8310w" element={<Suntech8310w />} />
-        
+        <Route path="/suntech-404/st8310r" element={<Suntech8310r />} />
+        <Route path="/entrack-404" element={<Entrack404 />} />
+        <Route path="/entrack-404/vl300r" element={<Entrack300r />} />
+        <Route path="/getrak-404" element={<Getrak404 />} />
+        <Route path="/getrak-404/gtkse" element={<Gtkse />} />
+        <Route path="/Jimi-404" element={<Jimi404 />} />
+        <Route path="/Jimi-404/vl02" element={<Vl02 />} />
+        <Route path="/multiportal-404" element={<Multiportal404 />} />
+        <Route path="/multiportal-404/rstmini" element={<Rstmini />} />
+        <Route path="/multiportal-404/vt2" element={<Rstvt2 />} />
         </Routes>
       </Suspense>
     </>
@@ -1576,3 +1586,4 @@ function App() {
   );
 }
 export default App;
+
