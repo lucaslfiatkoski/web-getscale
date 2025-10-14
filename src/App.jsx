@@ -46,6 +46,11 @@ const Ligacao_302 = lazy(() => import('./ligacao_302.jsx'));
 const Manual_501 = lazy(() => import('./manual_501.jsx'));
 const ManualGs404 = lazy(() => import('./manual_404.jsx'));
 const ManualGs601 = lazy(() => import('./manual_601.jsx'));
+const Suntech404 = lazy(() => import('./suntech404.jsx'));
+const St4305 = lazy(() => import('./st4305.jsx'));
+const Suntech300h = lazy(() => import('./st300h.jsx'));
+
+
 
 
 
@@ -1075,14 +1080,12 @@ function Home() {
                   </p>
 
                   <p className="text-sm text-gray-600">
-                    • <a 
-                        href="http://wiki.getscale.com.br/pt-br/gs404suntech" 
-                        className="text-blue-600 hover:underline" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                      >
-                        GS-404 / GS-100 / GS-501 com Suntech
-                      </a>
+                    • <Link 
+                              to="/suntech-404" 
+                              className="text-blue-600 hover:underline"
+                          >
+                              GS-404 / GS-100 / GS-501 com Suntech
+                          </Link>
                   </p>
 
                   <p className="text-sm text-gray-600">
@@ -1562,7 +1565,9 @@ function App() {
         <Route path="/manual-501" element={<Manual_501 />} />
         <Route path="/manual-404" element={<ManualGs404 />} />
         <Route path="/manual-601" element={<ManualGs601 />} />
-          
+        <Route path="/suntech-404" element={<Suntech404 />} />
+        <Route path="/suntech-404/st4305" element={<St4305 />} />
+        <Route path="/suntech-404/st300h" element={<Suntech300h />} />
         </Routes>
       </Suspense>
     </>
