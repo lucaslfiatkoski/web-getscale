@@ -49,9 +49,9 @@ const ManualGs601 = lazy(() => import('./manual_601.jsx'));
 const Suntech404 = lazy(() => import('./suntech404.jsx'));
 const St4305 = lazy(() => import('./st4305.jsx'));
 const Suntech300h = lazy(() => import('./st300h.jsx'));
-
-
-
+const Suntech340h = lazy(() => import('./s340.jsx'));
+const Suntech8300r = lazy(() => import('./st8300r.jsx'));
+const Suntech8310w = lazy(() => import('./st8310w.jsx'));
 
 
 
@@ -89,9 +89,6 @@ function Home() {
 
   const handleSubmit = async (e) => {
   e.preventDefault();
-  // ... adicione seu estado de loading aqui se desejar
-  
-  // O endpoint é o caminho para o arquivo que você criou: /api/send-email
   const endpoint = "/api/send-email";
 
   try {
@@ -1568,6 +1565,10 @@ function App() {
         <Route path="/suntech-404" element={<Suntech404 />} />
         <Route path="/suntech-404/st4305" element={<St4305 />} />
         <Route path="/suntech-404/st300h" element={<Suntech300h />} />
+        <Route path="/suntech-404/s340" element={<Suntech340h />} />
+        <Route path="/suntech-404/st8300r" element={<Suntech8300r />} />
+        <Route path="/suntech-404/st8310w" element={<Suntech8310w />} />
+        
         </Routes>
       </Suspense>
     </>

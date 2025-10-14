@@ -149,28 +149,28 @@ function Suntech404() {
               Instruções completas para ligação dos fios e configuração dos modelos ST300H, ST300HD e ST300R com suporte a RS232 e OneWire.
             </p>
             <p className="text-gray-600 mb-3">
-              • <Link to= '/suntech-404/st4305' // <<< Este é o caminho correto para o seu Link
+              • <Link to= '/suntech-404/s340' // <<< Este é o caminho correto para o seu Link
                 className="text-blue-600 underline"> 340RB / 340UR📍</Link>
             </p>
             <p className="text-gray-700 mb-6 leading-relaxed">
               Instruções específicas para instalação física e configuração via software SyncTrack e comandos SMS para os modelos 340RB e 340UR.
             </p>
             <p className="text-gray-600 mb-3">
-              • <Link to= '/suntech-404/st4305' // <<< Este é o caminho correto para o seu Link
+              • <Link to= '/suntech-404/st8300r' // <<< Este é o caminho correto para o seu Link
                 className="text-blue-600 underline"> ST8300R 📍</Link>
             </p>
             <p className="text-gray-700 mb-6 leading-relaxed">
               Instruções específicas para o modelo ST8300R.
             </p>
             <p className="text-gray-600 mb-3">
-              • <Link to= '/suntech-404/st4305' // <<< Este é o caminho correto para o seu Link
+              • <Link to= '/suntech-404/st8310w' // <<< Este é o caminho correto para o seu Link
                 className="text-blue-600 underline"> ST8310W📍</Link>
             </p>
             <p className="text-gray-700 mb-6 leading-relaxed">
               Instruções específicas para o modelo ST8310W via OneWire.
             </p>
             <p className="text-gray-600 mb-3">
-              • <Link to= '/suntech-404/st4305' // <<< Este é o caminho correto para o seu Link
+              • <Link to= '/suntech-404/st310r' // <<< Este é o caminho correto para o seu Link
                 className="text-blue-600 underline">  ST8310R📍</Link>
             </p>
             <p className="text-gray-700 mb-6 leading-relaxed">
