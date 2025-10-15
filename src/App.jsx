@@ -73,9 +73,23 @@ const Ruptela404 = lazy(() => import('./ruptela404.jsx'));
 const Trace5 = lazy(() => import('./trace5.jsx'));
 const Teltonika04 = lazy(() => import('./teltonika404.jsx'));
 const Fmc125 = lazy(() => import('./fmc125.jsx'));
-
-
-
+const Vitana404 = lazy(() => import('./vitana404.jsx'));
+const Vit4100 = lazy(() => import('./vit4100.jsx'));
+const Multiportal601 = lazy(() => import('./multiportal601.jsx'));
+const Rst601 = lazy(() => import('./rst601.jsx'));
+const Vt2601 = lazy(() => import('./vt2601.jsx'));
+const Suntech601 = lazy(() => import('./suntech601.jsx'));
+const Gs4305 = lazy(() => import('./gs4305.jsx'));
+const Gs300h = lazy(() => import('./gs300h.jsx'));
+const Gs340h = lazy(() => import('./gs340.jsx'));
+const Gs8310r = lazy(() => import('./gs8310r.jsx'));
+const Gs8300r = lazy(() => import('./gs8300r.jsx'));
+const Suntech302 = lazy(() => import('./suntech302.jsx'));
+const Gs43053 = lazy(() => import('./gs43053.jsx'));
+const Gs300h3 = lazy(() => import('./gs300h3.jsx'));
+const Gs340h3 = lazy(() => import('./gs3403.jsx'));
+const Gs8310r3 = lazy(() => import('./gs8310r3.jsx'));
+const Gs8300r3 = lazy(() => import('./gs8300r3.jsx'));
 
 
 
@@ -1106,14 +1120,12 @@ function Home() {
                   </p>
 
                   <p className="text-sm text-gray-600">
-                    • <a 
-                        href="http://wiki.getscale.com.br/pt-br/gs404vitana" 
+                    • <Link 
+                        to="/vitana-404" 
                         className="text-blue-600 hover:underline" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
                       >
                         GS-404 / GS-100 / GS-501 com Vitana
-                      </a>
+                      </Link>
                   </p>
                   </div>
                   <div>
@@ -1141,24 +1153,20 @@ function Home() {
               <CardContent className="space-y-3">
                 <div className="space-y-2">
                   <p className="text-sm text-gray-600">
-                    • <a 
-                        href="http://wiki.getscale.com.br/pt-br/gs601multiportal" 
+                    • <Link 
+                        to="/multiportal-601" 
                         className="text-blue-600 hover:underline" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
                       >
                         GS-601 com Multiportal
-                      </a>
+                      </Link>
                   </p>
                   <p className="text-sm text-gray-600">
-                    • <a 
-                        href="http://wiki.getscale.com.br/pt-br/gs601suntech" 
+                    • <Link
+                        to="/suntech-601" 
                         className="text-blue-600 hover:underline" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
                       >
                         GS-601 com Suntech
-                      </a>
+                      </Link>
                   </p>
                 </div>
                 <div>
@@ -1187,14 +1195,13 @@ function Home() {
                 <div className="space-y-2">
                   <p className="text-sm text-gray-600">
                     
-                    • <a 
-                        href="http://wiki.getscale.com.br/pt-br/gs302suntech" 
+                    • <Link
+                        to="/suntech-302" 
                         className="text-blue-600 hover:underline" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
+                
                       >
                         GS-302 com Suntech
-                      </a>
+                      </Link>
                   </p>
                 </div>
                 <div>
@@ -1598,6 +1605,23 @@ function App() {
         <Route path="/ruptela-404/trace5" element={<Trace5 />} />
         <Route path="/teltonika-404" element={<Teltonika04 />} />
         <Route path="/teltonika-404/fmc125" element={<Fmc125 />} />
+        <Route path="/vitana-404" element={<Vitana404 />} />
+        <Route path="/vitana-404/vit4100" element={<Vit4100 />} />
+        <Route path="/multiportal-601" element={<Multiportal601 />} />
+        <Route path="/multiportal-601/rst601" element={<Rst601 />} />
+        <Route path="/multiportal-601/vt2601" element={<Vt2601 />} />
+        <Route path="/suntech-601" element={<Suntech601 />} />
+        <Route path="/suntech-601/gs4305" element={<Gs4305 />} />
+        <Route path="/suntech-601/gs300h" element={<Gs300h />} />
+        <Route path="/suntech-601/gs340" element={<Gs340h />} />
+        <Route path="/suntech-601/gs8310r" element={<Gs8310r />} />
+        <Route path="/suntech-601/gs8300r" element={<Gs8300r />} />
+        <Route path="/suntech-302" element={<Suntech302 />} />
+        <Route path="/suntech-302/gs43053" element={<Gs43053 />} />
+        <Route path="/suntech-302/gs300h3" element={<Gs300h3 />} />
+        <Route path="/suntech-302/gs3403" element={<Gs340h3 />} />
+        <Route path="/suntech-302/gs8310r3" element={<Gs8310r3 />} />
+        <Route path="/suntech-302/gs8300r3" element={<Gs8300r3 />} />
         </Routes>
       </Suspense>
     </>
@@ -1605,4 +1629,5 @@ function App() {
   );
 }
 export default App;
+
 

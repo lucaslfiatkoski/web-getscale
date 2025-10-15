@@ -7,20 +7,19 @@ import { Textarea } from '@/components/ui/textarea.jsx';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Logo from './assets/logo.png'; // Presumindo que o Logo também será usado aqui
 
-import flyerImage from './assets/flyer_produtos_gs404.webp'
-import ParametrosImage from './assets/parametros.png'
-import ServicoImage from './assets/servico.jpg'
-
+import flyerImage from './assets/GS601.jpg'
+import Rst6011 from './assets/rst6011.png'
+import Rst6012 from './assets/rst6012.png'
+import Rst6013 from './assets/rst6013.png'
 
 // Dados de Cores dos Fios
 const wireColors = [
     { acessorio: 'Vermelho', acessorioBg: 'bg-red-600', funcao: '🔌 VCC - Positivo - 12/24 Volts', rastreador: 'Vermelho', rastreadorBg: 'bg-red-600' },
     { acessorio: 'Marrom', acessorioBg: 'bg-amber-800', funcao: '🔋 GND - Negativo', rastreador: 'Preto', rastreadorBg: 'bg-black' },
-    { acessorio: 'Azul', acessorioBg: 'bg-blue-600', funcao: '🚗 Ignição', rastreador: 'Branco', rastreadorBg: 'bg-white' },
-    { acessorio: 'Verde', acessorioBg: 'bg-green-600', funcao: '📤 TX (Transmissão) - Ligado ao RX do Rastreador', rastreador: 'Verde', rastreadorBg: 'bg-green-600' },
-    { acessorio: 'Laranja', acessorioBg: 'bg-orange-500', funcao: '📥 RX (Recepção) - Ligado ao TX do Rastreador', rastreador: 'Marrom', rastreadorBg: 'bg-amber-800' },
-    { acessorio: 'Cinza', acessorioBg: 'bg-gray-500', funcao: '🧬 OneWire', rastreador: 'Amarelo e Roxo', rastreadorBg: 'bg-gradient-to-r from-yellow-300 from-56% to-purple-600 to-50%' },
-    { acessorio: 'Amarelo', acessorioBg: 'bg-yellow-300', funcao: '🔔 Saída para bloqueio ou buzzer', rastreador: 'NC', rastreadorBg: 'bg-gray-300' },
+    { acessorio: 'Azul', acessorioBg: 'bg-blue-600', funcao: '🚗 Ignição', rastreador: 'Azul', rastreadorBg: 'bg-blue-600' },
+    { acessorio: 'Roxo', acessorioBg: 'bg-purple-600', funcao: '📤 TX (Transmissão) - Ligado ao RX do Rastreador', rastreador: 'Laranja', rastreadorBg: 'bg-orange-500' },
+    { acessorio: 'Cinza', acessorioBg: 'bg-gray-500', funcao: '📥 RX (Recepção) - Ligado ao TX do Rastreador', rastreador: 'Amarelo', rastreadorBg: 'bg-yellow-300' },
+
 ]
 
 // Configurações do WhatsApp
@@ -31,7 +30,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 // ======================================================
 // =============== NOVO COMPONENTE PRINCIPAL ============
 // ======================================================
-function Suntech340h() {
+function Rst601() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [formData, setFormData] = useState({
     nome: '',
@@ -139,16 +138,16 @@ function Suntech340h() {
               <div className="flex-1 bg-white shadow-xl rounded-2xl p-6 sm:p-8 font-inter">
                 {/* Breadcrumb */}
                 <div className="text-sm text-gray-500 mb-4">
-                  <Link to="/suntech-404" className="text-blue-600 hover:underline">Integrações Suntech</Link>
-                  <span> / gs404s340</span>
+                  <Link to="/multiportal-601" className="text-blue-600 hover:underline">Integrações Multiportal</Link>
+                  <span> / gs601rstmini</span>
                 </div>
 
                 {/* Title */}
                 <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 border-b pb-3 mb-6">
-                  <Pin className="inline w-6 h-6 mr-2 text-blue-600" /> GS-100, GS404 e GS-501 com Suntech 340UR / 340RB
+                  <Pin className="inline w-6 h-6 mr-2 text-blue-600" /> GS-601 com Multiportal VT2 10 vias e RST Mini 12 vias
                 </h1>
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  Instruções completas para ligação dos fios e configuração dos modelos 340UR / 340RB com suporte a RS232 e OneWire.
+                  Instruções completas para ligação dos fios e configuração dos modelos VT2 10 vias e RST Mini 12 vias com suporte a RS232.
                 </p>
 
                 {/* Product Image */}
@@ -163,7 +162,7 @@ function Suntech340h() {
                 {/* Wire Color Table Section */}
                 <section id="tabela-cores" className="mb-12">
                   <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                    🎨 Tabela de Cores – GS-100, GS404 e GS-501 x Suntech 340UR / 340RB
+                    🎨 Tabela de Cores – GS-601 x Multiportal VT2 10 vias e RST Mini 12 vias
                   </h2>
                   
                   <div className="overflow-x-auto bg-white rounded-lg shadow border border-gray-200">
@@ -185,7 +184,7 @@ function Suntech340h() {
                             </td>
                             <td className="px-4 py-3 text-gray-700">{row.funcao}</td>
                             <td className="px-4 py-3">
-                              <div className={`${row.rastreadorBg} ${row.rastreador === 'Branco' || row.rastreador === 'NC' || row.rastreador === 'Amarelo e Roxo' ? 'text-gray-900' : 'text-white'} px-3 py-2 rounded font-medium text-center`}>
+                              <div className={`${row.rastreadorBg} ${row.rastreador === 'Branco' || row.rastreador === 'NC' || row.rastreador === 'Amarelo' ? 'text-gray-900' : 'text-white'} px-3 py-2 rounded font-medium text-center`}>
                                 {row.rastreador}
                               </div>
                             </td>
@@ -201,12 +200,8 @@ function Suntech340h() {
                       <span className="text-green-700 font-semibold">ℹ️ Observação:</span>
                     </div>
                     <p className="text-gray-700 mt-2">
-                      O acessório pode ser conectado ao rastreador utilizando <strong>interface RS232 (TX e RX)</strong> ou <strong>interface OneWire (fio cinza)</strong>.
+                      O acessório pode ser conectado ao rastreador utilizando <strong>interface RS232 (TX e RX)</strong>.
                     </p>
-                    <p className="text-gray-700 mt-2">
-                      Não é necessário utilizar ambas ao mesmo tempo. Certifique-se de que a função OneWire esteja ativa no acessório antes de utilizá-la.
-                    </p>
-            
                   </div>
 
                  
@@ -215,50 +210,78 @@ function Suntech340h() {
                 {/* Configuration Section */}
                 <section id="configuracao" className="mb-12">
                   <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                    <Cpu className="w-6 h-6 text-blue-600" /> Configuração – 340UR / 340RB
+                    <Cpu className="w-6 h-6 text-blue-600" /> Configuração – VT2 10 vias e RST Mini 12 vias
                   </h2>
 
                   <Card className="shadow-lg">
                     <CardHeader>
                       <CardTitle className="text-xl text-gray-800">
-                        📌 Passo 1 – Definir a taxa de transmissão (Baud Rate)
+                        ⚙️ Configuração no Software Multiportal
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
                       <p className="text-gray-700 mb-4">
-                        No software <strong>SyncTrack</strong>, acesse o menu <strong>Parâmetros de Eventos</strong> e selecione o Baud Rate <strong>19200 bps</strong>.
+                        Para que o acessório funcione corretamente com os rastreadores Multiportal, acesse o software de configuração e vá até o menu <strong>LEITOR EXTERNO.</strong>.
+                      </p>
+                      <p className="text-gray-700 ">
+                        Marque a opção <strong>Habilitado</strong> em Configuração leitor ✅.
+                      </p>
+                      <p className="text-gray-700 ">
+                        Escolha a <strong>porta 1 ou 2 </strong> de acordo com o chicote conectado ao rastreador.
+                      </p>
+                      <p className="text-gray-700 mb-4">
+                         A <strong>velocidade deve ser 19200 bps</strong>, compatível com o padrão do leitor GS.
                       </p>
 
                       {/* SyncTrack Image */}
                       <div className="mb-6 bg-white p-4 rounded-lg shadow border border-gray-200">
                         <img
-                          src={ParametrosImage}
+                          src={Rst6011}
                           alt="SyncTrack - Taxa de Transmissão"
                           className="w-full max-w-lg mx-auto rounded border border-gray-200"
                         />
                       </div>
+                      <p className="text-gray-700 ">
+                         O campo <strong>“Comando” </strong> deve ficar em branco (não utilizado nos leitores Getscale).
+                      </p>
+                      <p className="text-gray-700 ">
+                         Após configurar, clique em  <strong>Gravar Configuração 📝 </strong>.
+                      </p>
+                      <p className="text-gray-700 mb-4">
+                        Em seguida, utilize os botões  <strong>Limpar</strong> e <strong>Ler Configuração</strong> para validar a comunicação.
+                      </p>
+
+
                     </CardContent>
                     <CardHeader>
                       <CardTitle className="text-xl text-gray-800">
-                        📌 Passo 2 – Habilitar log serial
+                        📟 Habilitar Função LEI DO MOTORISTA
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
                       <p className="text-gray-700 mb-4">
-                        Em <strong>Parâmetros de Serviço</strong>, ative a opção <strong>Log de comunicação serial.</strong> e selecione o Baud Rate <strong>19200 bps</strong>.
-                      </p>
-                      <p className="text-gray-700 mb-4">
-                        Essa função garante que os dados recebidos via RS232 sejam armazenados, mesmo em áreas de baixa cobertura.
+                        Acesse a aba <strong>ID MOTORISTA</strong>no software e habilite <strong> Lei do motorista.</strong>
                       </p>
 
                       {/* SyncTrack Image */}
                       <div className="mb-6 bg-white p-4 rounded-lg shadow border border-gray-200">
                         <img
-                          src={ServicoImage}
+                          src={Rst6012}
                           alt="SyncTrack - Taxa de Transmissão"
                           className="w-full max-w-lg mx-auto rounded border border-gray-200"
                         />
-                      </div>
+                      </div><br></br>
+                      <p className="text-gray-700 mb-4">
+                       Acesse a aba <strong>Lei do Motorista</strong> no software e selecione <strong>Habilitado </strong> em Configuração e habilite <strong>dentificação do motorista pelo ID (ibutton ou RFID)</strong> em Regras gerais.
+                      </p>
+                      <div className="mb-6 bg-white p-4 rounded-lg shadow border border-gray-200">
+                        <img
+                          src={Rst6013}
+                          alt="SyncTrack - Taxa de Transmissão"
+                          className="w-full max-w-lg mx-auto rounded border border-gray-200"
+                        />
+                      </div><br></br>
+                      
                     </CardContent>
                   </Card>
                   
@@ -360,4 +383,4 @@ function Suntech340h() {
 }
 
 
-export default Suntech340h;
+export default Rst601;
