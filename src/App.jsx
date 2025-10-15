@@ -62,6 +62,21 @@ const Vl02 = lazy(() => import('./vl02.jsx'));
 const Multiportal404 = lazy(() => import('./multiportal404.jsx'));
 const Rstmini = lazy(() => import('./rstmini.jsx'));
 const Rstvt2 = lazy(() => import('./vt2.jsx'));
+const Queclink404 = lazy(() => import('./queclink404.jsx'));
+const Gv50 = lazy(() => import('./gv50.jsx'));
+const Gv58 = lazy(() => import('./gv58.jsx'));
+const Gv75 = lazy(() => import('./gv75.jsx'));
+const Gv300 = lazy(() => import('./gv300.jsx'));
+const Quanta404 = lazy(() => import('./quanta404.jsx'));
+const Frotav2 = lazy(() => import('./frotav2.jsx'));
+const Ruptela404 = lazy(() => import('./ruptela404.jsx'));
+const Trace5 = lazy(() => import('./trace5.jsx'));
+const Teltonika04 = lazy(() => import('./teltonika404.jsx'));
+const Fmc125 = lazy(() => import('./fmc125.jsx'));
+
+
+
+
 
 
 // Import das imagens
@@ -73,6 +88,7 @@ import Gs302 from './assets//GS302.jpg'
 import Gs601 from './assets/GS601.jpg'
 import Gs501 from './assets/GS501.png'
 import Logo from './assets/logo.png'
+
 
 
 
@@ -1045,36 +1061,30 @@ function Home() {
                       </Link>
                   </p>
                   <p className="text-sm text-gray-600">
-                    • <a 
-                        href="http://wiki.getscale.com.br/pt-br/gs404queclink" 
-                        className="text-blue-600 hover:underline" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
+                    • <Link 
+                        to="/queclink-404" 
+                        className="text-blue-600 hover:underline"
                       >
                         GS-404 / GS-100 / GS-501 com Queclink
-                      </a>
+                      </Link>
                   </p>
 
                   <p className="text-sm text-gray-600">
-                    • <a 
-                        href="http://wiki.getscale.com.br/pt-br/gs404quanta" 
+                    • <Link
+                        to="/quanta-404" 
                         className="text-blue-600 hover:underline" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
                       >
                         GS-404 / GS-100 / GS-501 com Quanta
-                      </a>
+                      </Link>
                   </p>
 
                   <p className="text-sm text-gray-600">
-                    • <a 
-                        href="http://wiki.getscale.com.br/pt-br/gs404reptela" 
+                    • <Link 
+                        to="/ruptela-404" 
                         className="text-blue-600 hover:underline" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
                       >
                         GS-404 / GS-100 / GS-501 com Ruptela
-                      </a>
+                      </Link>
                   </p>
 
                   <p className="text-sm text-gray-600">
@@ -1087,14 +1097,12 @@ function Home() {
                   </p>
 
                   <p className="text-sm text-gray-600">
-                    • <a 
-                        href="http://wiki.getscale.com.br/pt-br/gs404teltonika" 
+                    • <Link 
+                        to="/teltonika-404" 
                         className="text-blue-600 hover:underline" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
                       >
                         GS-404 / GS-100 / GS-501 com Teltonika
-                      </a>
+                      </Link>
                   </p>
 
                   <p className="text-sm text-gray-600">
@@ -1579,6 +1587,17 @@ function App() {
         <Route path="/multiportal-404" element={<Multiportal404 />} />
         <Route path="/multiportal-404/rstmini" element={<Rstmini />} />
         <Route path="/multiportal-404/vt2" element={<Rstvt2 />} />
+        <Route path="/queclink-404" element={<Queclink404 />} />
+        <Route path="/queclink-404/gv50" element={<Gv50 />} />
+        <Route path="/queclink-404/gv58" element={<Gv58 />} />
+        <Route path="/queclink-404/gv75" element={<Gv75 />} />
+        <Route path="/queclink-404/gv300" element={<Gv300 />} />
+        <Route path="/quanta-404" element={<Quanta404 />} />
+        <Route path="/quanta-404/frotav2" element={<Frotav2 />} />
+        <Route path="/ruptela-404" element={<Ruptela404 />} />
+        <Route path="/ruptela-404/trace5" element={<Trace5 />} />
+        <Route path="/teltonika-404" element={<Teltonika04 />} />
+        <Route path="/teltonika-404/fmc125" element={<Fmc125 />} />
         </Routes>
       </Suspense>
     </>
