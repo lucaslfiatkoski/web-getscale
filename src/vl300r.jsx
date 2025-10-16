@@ -139,7 +139,7 @@ function Entrack300r() {
               {/* Wire Color Table Section - INÍCIO DA MODIFICAÇÃO */}
               <section id="tabela-cores" className="mb-12">
                 <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                  🎨 Tabela de Cores – GS-100, GS404 e GS-501 x Entrack VL300R
+                  🎨 Tabela de Cores – GS-100, GS-404 e GS-501 x Entrack VL300R
                 </h2>
 
                 <div className="overflow-x-auto bg-white rounded-lg shadow border border-gray-200">
@@ -175,7 +175,7 @@ function Entrack300r() {
                     </tbody>
                   </table>
                 </div>
-              {/* Wire Color Table Section - FIM DA MODIFICAÇÃO */}
+             
                 
                 <div className="mt-6 bg-green-50 border-l-4 border-green-500 p-4 rounded-lg">
                   <div className="flex items-center gap-2">

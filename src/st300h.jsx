@@ -78,14 +78,14 @@ function Suntech300h() {
 
 
   return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
-        {/* ===================== HEADER (COPIADO DO 404) ===================== */}
-        <header className="bg-white/95 backdrop-blur-sm shadow-lg sticky top-0 z-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between h-30">
-              <div className="flex items-center space-x-2">
-                <img src={Logo} alt="Getscale Logo" className="h-20 object-contain" />
-              </div>
+       <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 overflow-x-hidden">
+      {/* HEADER */}
+      <header className="bg-white/95 backdrop-blur-sm shadow-lg sticky top-0 z-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-30">
+            <div className="flex items-center space-x-2">
+              <img src={Logo} alt="Getscale Logo" className="h-20 object-contain" />
+            </div>
 
               {/* Navegação desktop */}
               <nav className="hidden md:flex space-x-8">
@@ -167,33 +167,38 @@ function Suntech300h() {
                   </h2>
                   
                   <div className="overflow-x-auto bg-white rounded-lg shadow border border-gray-200">
-                    <table className="w-full border-collapse">
-                      <thead>
-                        <tr className="border-b border-gray-200 bg-gray-50">
-                          <th className="px-4 py-3 text-left font-semibold text-gray-700">Cor do Fio no Acessório</th>
-                          <th className="px-4 py-3 text-left font-semibold text-gray-700">Função</th>
-                          <th className="px-4 py-3 text-left font-semibold text-gray-700">Cor no Rastreador</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {wireColors.map((row, index) => (
-                          <tr key={index} className="border-b border-gray-100 hover:bg-gray-50">
-                            <td className="px-4 py-3">
-                              <div className={`${row.acessorioBg} ${row.acessorio === 'Branco' || row.acessorio === 'Amarelo' ? 'text-gray-900' : 'text-white'} px-3 py-2 rounded font-medium text-center`}>
-                                {row.acessorio}
-                              </div>
-                            </td>
-                            <td className="px-4 py-3 text-gray-700">{row.funcao}</td>
-                            <td className="px-4 py-3">
-                              <div className={`${row.rastreadorBg} ${row.rastreador === 'Branco' || row.rastreador === 'NC' || row.rastreador === 'Amarelo' ? 'text-gray-900' : 'text-white'} px-3 py-2 rounded font-medium text-center`}>
-                                {row.rastreador}
-                              </div>
-                            </td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
+                  {/* Reduzido para text-xs no mobile */}
+                  <table className="w-full border-collapse text-xs sm:text-base table-auto">
+                    <thead>
+                      <tr className="border-b border-gray-200 bg-gray-50">
+                        {/* Redução do padding (px-2 py-2) no mobile */}
+                        <th className="px-2 py-2 sm:px-4 sm:py-3 text-left font-semibold text-gray-700">Acessório</th> {/* Nome da coluna encurtado */}
+                        <th className="px-2 py-2 sm:px-4 sm:py-3 text-left font-semibold text-gray-700">Função</th>
+                        <th className="px-2 py-2 sm:px-4 sm:py-3 text-left font-semibold text-gray-700">Rastreador</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {wireColors.map((row, index) => (
+                        <tr key={index} className="border-b border-gray-100 hover:bg-gray-50">
+                          {/* Cor Acessório: Padding reduzido da célula (px-1 py-1) e do div de cor (px-1 py-1) */}
+                          <td className="px-1 sm:px-4 py-1 sm:py-3">
+                            <div className={`${row.acessorioBg} ${row.acessorio === 'Branco' || row.acessorio === 'Amarelo' ? 'text-gray-900' : 'text-white'} px-1 py-1 sm:px-3 sm:py-2 rounded font-medium text-center text-xs sm:text-sm`}>
+                              {row.acessorio}
+                            </div>
+                          </td>
+                          {/* Função: Padding e Fonte reduzidos */}
+                          <td className="px-2 sm:px-4 py-1 sm:py-3 text-gray-700 text-xs sm:text-base">{row.funcao}</td>
+                          {/* Cor Rastreador: Padding reduzido da célula (px-1 py-1) e do div de cor (px-1 py-1) */}
+                          <td className="px-1 sm:px-4 py-1 sm:py-3">
+                            <div className={`${row.rastreadorBg} ${row.rastreador === 'Branco' || row.rastreador === 'NC' || row.rastreador === 'Amarelo' ? 'text-gray-900' : 'text-white'} px-1 py-1 sm:px-3 sm:py-2 rounded font-medium text-center text-xs sm:text-sm`}>
+                              {row.rastreador}
+                            </div>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
 
                   {/* Observation Box */}
                   <div className="mt-6 bg-green-50 border-l-4 border-green-500 p-4 rounded-lg">
