@@ -7,7 +7,7 @@ import { Textarea } from '@/components/ui/textarea.jsx';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Logo from './assets/logo.png'; // Presumindo que o Logo também será usado aqui
 
-import flyerImage from './assets/flyer_produtos_gs404.webp'
+import flyerImage from './assets/rastreadores.jpg'
 import Log5 from './assets/vl300rlog5.png'
 import Logok from './assets/entracklog5ok.png'
 import Baud1 from './assets/vl300rbaud1.png'
@@ -80,12 +80,12 @@ function Entrack300r() {
 
 
   return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 overflow-x-hidden">
         {/* ===================== HEADER (COPIADO DO 404) ===================== */}
-        <header className="bg-white/95 backdrop-blur-sm shadow-lg sticky top-0 z-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <header className="bg-white/95  backdrop-blur-sm shadow-lg sticky top-0 z-50">
+          <div className="container  mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-30">
-              <div className="flex items-center space-x-2">
+              <div className="flex  items-center space-x-2">
                 <img src={Logo} alt="Getscale Logo" className="h-20 object-contain" />
               </div>
 
@@ -134,8 +134,8 @@ function Entrack300r() {
         </header>
 
         {/* ===================== CONTEÚDO PRINCIPAL (sunctech1.jsx) ===================== */}
-        <main className="flex-1 py-10">
-          <div className="max-w-7xl mx-auto px-4 lg:px-8">
+        <main className="flex-1  py-10">
+          <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-hidden">
             <div className="flex gap-6">
               {/* Content Area */}
               <div className="flex-1 bg-white shadow-xl rounded-2xl p-6 sm:p-8 font-inter">
@@ -169,7 +169,7 @@ function Entrack300r() {
                   </h2>
                   
                   <div className="overflow-x-auto bg-white rounded-lg shadow border border-gray-200">
-                    <table className="w-full border-collapse">
+                   <table className="min-w-full border-collapse text-sm sm:text-base">
                       <thead>
                         <tr className="border-b border-gray-200 bg-gray-50">
                           <th className="px-4 py-3 text-left font-semibold text-gray-700">Cor do Fio no Acessório</th>
@@ -180,13 +180,13 @@ function Entrack300r() {
                       <tbody>
                         {wireColors.map((row, index) => (
                           <tr key={index} className="border-b border-gray-100 hover:bg-gray-50">
-                            <td className="px-4 py-3">
+                            <td className="px-2 sm:px-4 py-2 sm:py-3">
                               <div className={`${row.acessorioBg} ${row.acessorio === 'Branco' || row.acessorio === 'Amarelo' ? 'text-gray-900' : 'text-white'} px-3 py-2 rounded font-medium text-center`}>
                                 {row.acessorio}
                               </div>
                             </td>
                             <td className="px-4 py-3 text-gray-700">{row.funcao}</td>
-                            <td className="px-4 py-3">
+                            <td className="px-2 sm:px-4 py-2 sm:py-3">
                               <div className={`${row.rastreadorBg} ${row.rastreador === 'Branco' || row.rastreador === 'NC' || row.rastreador === 'Amarelo' ? 'text-gray-900' : 'text-white'} px-3 py-2 rounded font-medium text-center`}>
                                 {row.rastreador}
                               </div>
@@ -219,7 +219,7 @@ function Entrack300r() {
                     <Cpu className="w-6 h-6 text-blue-600" /> Configuração – VL300R
                   </h2>
 
-                  <Card className="shadow-lg">
+                  <Card className="shadow-lg p-4 sm:p-6">
                     <CardHeader>
                       <CardTitle className="text-xl text-gray-800">
                         📌 Passo 1 – Ativar comunicação RS232 Transparente
