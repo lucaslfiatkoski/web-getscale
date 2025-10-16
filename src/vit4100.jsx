@@ -7,7 +7,7 @@ import { Textarea } from '@/components/ui/textarea.jsx';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Logo from './assets/logo.png'; // Presumindo que o Logo também será usado aqui
 
-import flyerImage from './assets/flyer_produtos_gs404.webp'
+import flyerImage from './assets/rastreadores.jpg'
 import Fmc1 from './assets/fmc1.png'
 import Fmc2 from './assets/fmc2.png'
 
@@ -79,7 +79,6 @@ function Vit4100() {
 
   return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 overflow-x-hidden">
-      {/* HEADER */}
       <header className="bg-white/95 backdrop-blur-sm shadow-lg sticky top-0 z-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-30">
@@ -132,12 +131,10 @@ function Vit4100() {
         </header>
 
         {/* ===================== CONTEÚDO PRINCIPAL (sunctech1.jsx) ===================== */}
-        <main className="flex-1 py-10">
-          <div className="max-w-7xl mx-auto px-4 lg:px-8">
-            <div className="flex gap-6">
-              {/* Content Area */}
-              <div className="flex-1 bg-white shadow-xl rounded-2xl p-6 sm:p-8 font-inter">
-                {/* Breadcrumb */}
+       <main className="flex-1 py-10">
+  <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+      <div className="flex-1 bg-white shadow-xl rounded-2xl p-6 sm:p-8 font-inter max-w-4xl mx-auto">
                 <div className="text-sm text-gray-500 mb-4">
                   <Link to="/vitana-404" className="text-blue-600 hover:underline">Integrações Vitana</Link>
                   <span> / gs404vit4100</span>
@@ -145,7 +142,7 @@ function Vit4100() {
 
                 {/* Title */}
                 <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 border-b pb-3 mb-6">
-                  <Pin className="inline w-6 h-6 mr-2 text-blue-600" /> GS-100, GS404 e GS-501 com Vitana VIT-4100
+                  <Pin className="inline w-6 h-6 mr-2 text-blue-600" /> GS-100, GS-404 e GS-501 com Vitana VIT-4100
                 </h1>
                 <p className="text-gray-600 mb-6 leading-relaxed">
                   Instruções completas para ligação dos fios e configuração do modelo  VIT-4100 com suporte a Rs232.
@@ -153,17 +150,15 @@ function Vit4100() {
 
                 {/* Product Image */}
                 <div className="mb-8">
-                  <img
-                    src={flyerImage}
-                    alt="GS-404 Identificador de Motorista e Passageiros"
-                    className="w-full rounded-lg shadow-lg"
-                  />
-                </div>
+                <img src={flyerImage} 
+                alt="GS-404 Identificador de Motorista e Passageiros"
+                 className="w-full max-w-full h-auto rounded-lg shadow-lg" />
+              </div>
 
                 {/* Wire Color Table Section */}
                 <section id="tabela-cores" className="mb-12">
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                    🎨 Tabela de Cores – GS-100, GS404 e GS-501 x Vitana VIT-4100
+                   <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                    🎨 Tabela de Cores – GS-100, GS-404 e GS-501 x Vitana VIT-4100
                   </h2>
                   
                   <div className="overflow-x-auto bg-white rounded-lg shadow border border-gray-200">
@@ -219,7 +214,7 @@ function Vit4100() {
                     <Cpu className="w-6 h-6 text-blue-600" /> Configuração – VIT-4100
                   </h2>
 
-                  <Card className="shadow-lg">
+                   <Card className="shadow-lg p-4 sm:p-6">
                     <CardHeader>
                       <CardTitle className="text-xl text-gray-800">
                         📌 Definir Baudrate (taxa de transmissão)
@@ -260,8 +255,8 @@ function Vit4100() {
                     <p className="text-gray-700 mb-4">
                         <strong>📦 Exemplo completo:</strong>
                       </p>
-                      <p className="border text-center text-gray-700 mb-4">
-                        <strong>&&m361,38,865074055573173,710,701|123456|,*CS\r\n</strong>
+                      <p className="border text-center text-gray-700 mb-4 break-words">
+                          <strong>&&m361,38,865074055573173,710,701|123456|,*CS\r\n</strong>
                       </p>
                       <p className=" text-gray-700 mb-4">
                         No exemplo acima:
@@ -302,7 +297,7 @@ function Vit4100() {
                   </div>
                 </section>
               </div>
-            </div>
+          
           </div>
         </main>
 
@@ -324,6 +319,7 @@ function Vit4100() {
                   <div>
                     <p className="font-medium">Telefone:</p>
                     <p className="text-gray-300 text-lg">(41) 99167-6700</p>
+                    <p className="text-gray-300 text-lg">0800 191 2328</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">

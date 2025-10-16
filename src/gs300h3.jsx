@@ -7,7 +7,7 @@ import { Textarea } from '@/components/ui/textarea.jsx';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Logo from './assets/logo.png'; // Presumindo que o Logo também será usado aqui
 
-import flyerImage from './assets/flyer_produtos_gs404.webp'
+import flyerImage from './assets/rastreadores.jpg'
 import ParametrosImage from './assets/parametros.png'
 import ServicoImage from './assets/servico.jpg'
 
@@ -309,6 +309,7 @@ function Suntech300h3() {
                   <div>
                     <p className="font-medium">Telefone:</p>
                     <p className="text-gray-300 text-lg">(41) 99167-6700</p>
+                    <p className="text-gray-300 text-lg">0800 191 2328</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">

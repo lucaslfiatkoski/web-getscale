@@ -7,7 +7,7 @@ import { Textarea } from '@/components/ui/textarea.jsx';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Logo from './assets/logo.png'; // Presumindo que o Logo também será usado aqui
 
-import flyerImage from './assets/flyer_produtos_gs404.webp'
+import flyerImage from './assets/rastreadores.jpg'
 import rastreadorImage from './assets/st8300_rastreador_rs232.webp'
 import synctrackImage from './assets/synctrack_taxa_transmissao.webp'
 
@@ -144,7 +144,7 @@ function Suntech4305() {
 
                 {/* Title */}
                 <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 border-b pb-3 mb-6">
-                  <Pin className="inline w-6 h-6 mr-2 text-blue-600" /> GS-100, GS404 e GS-501 com Suntech ST4305 / ST8300 / ST8300H
+                  <Pin className="inline w-6 h-6 mr-2 text-blue-600" /> GS-100, GS-404 e GS-501 com Suntech ST4305 / ST8300 / ST8300H
                 </h1>
                 <p className="text-gray-600 mb-6 leading-relaxed">
                   Instruções completas para ligação dos fios e configuração dos modelos ST4305, ST8300 e ST8300H com suporte a RS232 e OneWire.
@@ -162,7 +162,7 @@ function Suntech4305() {
                 {/* Wire Color Table Section */}
                 <section id="tabela-cores" className="mb-12">
                   <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                    🎨 Tabela de Cores – GS-100, GS404 e GS-501 x Suntech ST4305 / ST8300 / ST8300H
+                    🎨 Tabela de Cores – GS-100, GS-404 e GS-501 x Suntech ST4305 / ST8300 / ST8300H
                   </h2>
                   
                   <div className="overflow-x-auto bg-white rounded-lg shadow border border-gray-200">
@@ -296,6 +296,7 @@ function Suntech4305() {
                   <div>
                     <p className="font-medium">Telefone:</p>
                     <p className="text-gray-300 text-lg">(41) 99167-6700</p>
+                    <p className="text-gray-300 text-lg">0800 191 2328</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">

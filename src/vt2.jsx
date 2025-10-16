@@ -128,7 +128,7 @@ function Rstvt2() {
 
                 {/* Title */}
                 <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 border-b pb-3 mb-6">
-                  <Pin className="inline w-6 h-6 mr-2 text-blue-600" /> GS-100, GS404 e GS-501 com Multiportal VT2 8 vias
+                  <Pin className="inline w-6 h-6 mr-2 text-blue-600" /> GS-100, GS-404 e GS-501 com Multiportal VT2 8 vias
                 </h1>
                 <p className="text-gray-600 mb-6 leading-relaxed">
                   Instruções completas para ligação dos fios e configuração dos modelos VT2 8 vias com suporte a RS232.

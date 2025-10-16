@@ -133,7 +133,9 @@ function Entrack300r() {
 
               {/* Product Image */}
               <div className="mb-8">
-                <img src={flyerImage} alt="GS-404 Identificador de Motorista e Passageiros" className="w-full max-w-full h-auto rounded-lg shadow-lg" />
+                <img src={flyerImage} 
+                alt="GS-404 Identificador de Motorista e Passageiros"
+                 className="w-full max-w-full h-auto rounded-lg shadow-lg" />
               </div>
 
               {/* Wire Color Table Section - INÍCIO DA MODIFICAÇÃO */}

@@ -7,7 +7,7 @@ import { Textarea } from '@/components/ui/textarea.jsx';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Logo from './assets/logo.png'; // Presumindo que o Logo também será usado aqui
 
-import flyerImage from './assets/flyer_produtos_gs404.webp'
+import flyerImage from './assets/rastreadores.jpg'
 import Trace1 from './assets/trace1.png'
 import Trace2 from './assets/trace2.png'
 
@@ -145,7 +145,7 @@ function Trace5() {
 
                 {/* Title */}
                 <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 border-b pb-3 mb-6">
-                  <Pin className="inline w-6 h-6 mr-2 text-blue-600" /> GS-100, GS404 e GS-501 com Ruptela Trace5
+                  <Pin className="inline w-6 h-6 mr-2 text-blue-600" /> GS-100, GS-404 e GS-501 com Ruptela Trace5
                 </h1>
                 <p className="text-gray-600 mb-6 leading-relaxed">
                   Instruções completas para ligação dos fios e configuração do modelo Trace5 com suporte a OneWire.
@@ -163,7 +163,7 @@ function Trace5() {
                 {/* Wire Color Table Section */}
                 <section id="tabela-cores" className="mb-12">
                   <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                    🎨 Tabela de Cores – GS-100, GS404 e GS-501 x Ruptela Trace5
+                    🎨 Tabela de Cores – GS-100, GS-404 e GS-501 x Ruptela Trace5
                   </h2>
                   
                  <div className="overflow-x-auto bg-white rounded-lg shadow border border-gray-200">
@@ -318,6 +318,7 @@ function Trace5() {
                   <div>
                     <p className="font-medium">Telefone:</p>
                     <p className="text-gray-300 text-lg">(41) 99167-6700</p>
+                    <p className="text-gray-300 text-lg">0800 191 2328</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">

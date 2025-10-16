@@ -196,6 +196,7 @@ function Multiportal404() {
                 <div>
                   <p className="font-medium">Telefone:</p>
                   <p className="text-gray-300 text-lg">(41) 99167-6700</p>
+                  <p className="text-gray-300 text-lg">0800 191 2328</p>
                 </div>
               </div>
               <div className="flex items-center space-x-4">

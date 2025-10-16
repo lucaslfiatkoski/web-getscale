@@ -7,7 +7,7 @@ import { Textarea } from '@/components/ui/textarea.jsx';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Logo from './assets/logo.png'; // Presumindo que o Logo também será usado aqui
 
-import flyerImage from './assets/GS601.jpg'
+import flyerImage from './assets/rastreadores601.jpg'
 import Rst6011 from './assets/rst6011.png'
 import Rst6012 from './assets/rst6012.png'
 import Rst6013 from './assets/rst6013.png'
@@ -334,6 +334,7 @@ function Vt2601() {
                   <div>
                     <p className="font-medium">Telefone:</p>
                     <p className="text-gray-300 text-lg">(41) 99167-6700</p>
+                    <p className="text-gray-300 text-lg">0800 191 2328</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">

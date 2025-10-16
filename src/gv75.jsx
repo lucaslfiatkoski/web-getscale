@@ -7,7 +7,7 @@ import { Textarea } from '@/components/ui/textarea.jsx';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Logo from './assets/logo.png'; // Presumindo que o Logo também será usado aqui
 
-import flyerImage from './assets/flyer_produtos_gs404.webp'
+import flyerImage from './assets/rastreadores.jpg'
 import Gv751 from './assets/gv75.png'
 import Gv75m from './assets/gv75m.png'
 
@@ -134,7 +134,7 @@ function Gv75() {
         {/* ===================== CONTEÚDO PRINCIPAL (sunctech1.jsx) ===================== */}
         <main className="flex-1 py-10">
           <div className="max-w-7xl mx-auto px-4 lg:px-8">
-            <div className="flex gap-6">
+           
               {/* Content Area */}
               <div className="flex-1 bg-white shadow-xl rounded-2xl p-6 sm:p-8 font-inter">
                 {/* Breadcrumb */}
@@ -145,7 +145,7 @@ function Gv75() {
 
                 {/* Title */}
                 <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 border-b pb-3 mb-6">
-                  <Pin className="inline w-6 h-6 mr-2 text-blue-600" /> GS-100, GS404 e GS-501 com Queclink GV75 e GV75M
+                  <Pin className="inline w-6 h-6 mr-2 text-blue-600" /> GS-100, GS-404 e GS-501 com Queclink GV75 e GV75M
                 </h1>
                 <p className="text-gray-600 mb-6 leading-relaxed">
                   Instruções completas para ligação dos fios e configuração dos modelos GV75 e GV75M com suporte a RS232.
@@ -163,7 +163,7 @@ function Gv75() {
                 {/* Wire Color Table Section */}
                 <section id="tabela-cores" className="mb-12">
                   <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                    🎨 Tabela de Cores – GS-100, GS404 e GS-501 x Queclink GV75 e GV75M
+                    🎨 Tabela de Cores – GS-100, GS-404 e GS-501 x Queclink GV75 e GV75M
                   </h2>
                   
                   <div className="overflow-x-auto bg-white rounded-lg shadow border border-gray-200">
@@ -244,7 +244,7 @@ function Gv75() {
                     <p className="text-gray-700 mb-4">
                         ✅ Você também pode usar o comando SMS abaixo para aplicar a configuração:
                       </p>
-                      <p className="text-center text-gray-700 mb-4">
+                      <p className="border text-center text-gray-700 mb-4 break-words">
                         <strong>AT+GTURT=gv75,3,7,8,1,0,2,0,2,,FFFF$</strong>
                       </p><br></br>
 
@@ -281,7 +281,7 @@ function Gv75() {
                       <p className="text-gray-700 mb-4">
                         ✅ Comando SMS equivalente:
                       </p>
-                      <p className="text-center text-gray-700 mb-4">
+                      <p className="border text-center text-gray-700 mb-4 break-words">
                         <strong>AT+GTURT=gv75m,3,7,8,1,0,0,,2,,FFFF$</strong>
                       </p>
                      
@@ -310,7 +310,7 @@ function Gv75() {
                   </div>
                 </section>
               </div>
-            </div>
+          
           </div>
         </main>
 
@@ -332,6 +332,7 @@ function Gv75() {
                   <div>
                     <p className="font-medium">Telefone:</p>
                     <p className="text-gray-300 text-lg">(41) 99167-6700</p>
+                    <p className="text-gray-300 text-lg">0800 191 2328</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
