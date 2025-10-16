@@ -7,7 +7,7 @@ import { Textarea } from '@/components/ui/textarea.jsx';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Logo from './assets/logo.png'; // Presumindo que o Logo também será usado aqui
 
-import flyerImage from './assets/rastreadores.jpg'
+import flyerImage from './assets/rastreadores302.jpg'
 import ParametrosImage from './assets/parametros.png'
 import ServicoImage from './assets/servico.jpg'
 
